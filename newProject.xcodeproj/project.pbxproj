@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		172A372722E6916B00F3DE03 /* CalculatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172A372622E6916B00F3DE03 /* CalculatorView.swift */; };
 		17D5D25B22DC216000306351 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D5D25A22DC216000306351 /* AppDelegate.swift */; };
 		17D5D25D22DC216000306351 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D5D25C22DC216000306351 /* ViewController.swift */; };
 		17D5D26022DC216000306351 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17D5D25E22DC216000306351 /* Main.storyboard */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		172A372622E6916B00F3DE03 /* CalculatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorView.swift; sourceTree = "<group>"; };
 		17D5D25722DC216000306351 /* newProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = newProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17D5D25A22DC216000306351 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		17D5D25C22DC216000306351 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = newProject/ViewController.swift; sourceTree = SOURCE_ROOT; };
@@ -103,6 +105,7 @@
 				17D5D26122DC216100306351 /* Assets.xcassets */,
 				17D5D26322DC216100306351 /* LaunchScreen.storyboard */,
 				17D5D26622DC216100306351 /* Info.plist */,
+				172A372622E6916B00F3DE03 /* CalculatorView.swift */,
 			);
 			path = newProject;
 			sourceTree = "<group>";
@@ -257,6 +260,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				17D5D25D22DC216000306351 /* ViewController.swift in Sources */,
+				172A372722E6916B00F3DE03 /* CalculatorView.swift in Sources */,
 				17D5D25B22DC216000306351 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
