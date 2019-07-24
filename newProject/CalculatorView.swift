@@ -9,9 +9,20 @@
 import Foundation
 import UIKit
 
+// custom class로 원형 버튼 한번에 만들기
+class UIRoundButton : UIButton {
+    required init(coder aDecoder : NSCoder) {
+        super.init(coder : aDecoder)!
+        
+        self.layer.cornerRadius = self.frame.width/2
+        self.layer.masksToBounds = true
+    }
+}
+
 class CalculatorView : UIViewController {
 
     @IBOutlet var number0: UIButton!
+   
     @IBOutlet var number1: UIButton!
     @IBOutlet var number2: UIButton!
     @IBOutlet var number3: UIButton!
@@ -31,59 +42,24 @@ class CalculatorView : UIViewController {
     @IBOutlet var equal: UIButton!
     @IBOutlet var dot: UIButton!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        number0.layer.cornerRadius = number0.frame.width/4
-        number0.layer.masksToBounds = true
-        number1.layer.cornerRadius = number1.frame.width/2
-        number1.layer.masksToBounds = true
-        number2.layer.cornerRadius = number2.frame.width/2
-        number2.layer.masksToBounds = true
-        number3.layer.cornerRadius = number3.frame.width/2
-        number3.layer.masksToBounds = true
-        number4.layer.cornerRadius = number4.frame.width/2
-        number4.layer.masksToBounds = true
-        number5.layer.cornerRadius = number5.frame.width/2
-        number5.layer.masksToBounds = true
-        number6.layer.cornerRadius = number6.frame.width/2
-        number6.layer.masksToBounds = true
-        number7.layer.cornerRadius = number7.frame.width/2
-        number7.layer.masksToBounds = true
-        number8.layer.cornerRadius = number8.frame.width/2
-        number8.layer.masksToBounds = true
-        number9.layer.cornerRadius = number9.frame.width/2
-        number9.layer.masksToBounds = true
-        clear.layer.cornerRadius = clear.frame.width/2
-        clear.layer.masksToBounds = true
-        reverse.layer.cornerRadius = reverse.frame.width/2
-        reverse.layer.masksToBounds = true
-        percent.layer.cornerRadius = percent.frame.width/2
-        percent.layer.masksToBounds = true
-        divide.layer.cornerRadius = divide.frame.width/2
-        divide.layer.masksToBounds = true
-        multiply.layer.cornerRadius = multiply.frame.width/2
-        multiply.layer.masksToBounds = true
-        minus.layer.cornerRadius = minus.frame.width/2
-        minus.layer.masksToBounds = true
-        plus.layer.cornerRadius = plus.frame.width/2
-        plus.layer.masksToBounds = true
-        equal.layer.cornerRadius = equal.frame.width/2
-        equal.layer.masksToBounds = true
-        dot.layer.cornerRadius = dot.frame.width/2
-        dot.layer.masksToBounds = true
-    }
+    @IBOutlet var showResult: UILabel!
     
-    var save : Double = 0   // 계산 임시 저장
+    var save : Double = 0   // 중간 계산 결과
     var input_operator : String = ""    // 연산자 입력
     var result : Double = 0 // 최종 출력할 결과
     
-    @IBOutlet var showResult: UILabel!
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        number0.layer.cornerRadius = number0.frame.width/4
+        number0.layer.masksToBounds = true
+    }
     
+    // 클릭한 버튼의 text를 읽고 showResult Label에 보여줌
     var isClickNumber = false
-    
-    // 클릭한 버튼의 text를 showResult Label에 실시간으로 보여줌
     @IBAction func isClickNumber(button : UIButton) {
-        var clickednumber = button.titleLabel?.text
+        // var clickednumber was never mutated sol) var -> let)
+        let clickednumber = button.titleLabel?.text
         if isClickNumber {
             showResult.text = showResult.text! + clickednumber!
         } else {
@@ -92,83 +68,95 @@ class CalculatorView : UIViewController {
         }
     }
     
-    @IBAction func button_Clear(_ sender: Any) {
-        print("clear all")
-        save = 0
-        result = 0
-        showResult.text = ""
+    var plusClick : Bool = false
+    var minClick : Bool = false
+    var mulClick : Bool = false
+    var divClick : Bool = false
+    
+    @IBAction func calculate(button : UIButton) {
+        let clickedOperator = button.titleLabel?.text
+        
+        switch clickedOperator {
+            
+        case "+" :
+            print("do plus")
+            save = Double(String(showResult.text!))!
+            isClickNumber = false
+            plusClick = true
+            
+        case "-" :
+            print("do minus")
+            save = Double(String(showResult.text!))!
+            isClickNumber = false
+            minClick = true
+            
+        case "x" :
+            print("do multiply")
+            save = Double(String(showResult.text!))!
+            isClickNumber = false
+            mulClick = true
+            
+        case "/" :
+            print("do division")
+            save = Double(String(showResult.text!))!
+            isClickNumber = false
+            divClick = true
+            
+        case "%" :
+            print("make percentage")
+            save = Double(String(showResult.text!))!
+            showResult.text = String(save / 100)
+            
+        case "+/-" :
+            print("make reverse")
+            save = Double(String(showResult.text!))!
+            showResult.text = String(-save)
+            
+        case "=" :
+            print("default")
+            showValue()
+            
+        default :   // "AC"
+            print("clear all")
+            save = 0
+            result = 0
+            showResult.text = ""
+        }
     }
     
-    @IBAction func button_Result(_ sender: Any) {
-        print("show result")
+    func showValue() {
+        print("show final value on label")
+        
+        let lastValue : Double = Double(String(showResult.text!))!
+        
         if plusClick == true {
-            result = save + Double(String(showResult.text!))!
+            result = save + lastValue
             showResult.text = "\(result)"
             plusClick = false
         }
         if minClick == true {
-            result = save - Double(String(showResult.text!))!
+            result = save - lastValue
             showResult.text = "\(result)"
             minClick = false
         }
         if mulClick == true {
-            result = save * Double(String(showResult.text!))!
+            result = save * lastValue
             showResult.text = "\(result)"
             mulClick = false
         }
         if divClick == true {
-            result = save / Double(String(showResult.text!))!
-            showResult.text = "\(result)"
+            if lastValue != 0 {
+                result = save / lastValue
+                showResult.text = "\(result)"
+            } else {
+                showResult.text = "오류"
+            }
             divClick = false
         }
         
         print("result : \(result)")
     }
     
-    var plusClick : Bool = false
-    @IBAction func button_Plus(_ sender: Any) {
-        print("do plus")
-        save = Double(String(showResult.text!))!
-        isClickNumber = false
-        plusClick = true
-    }
     
-    var divClick : Bool = false
-    @IBAction func button_Div(_ sender: Any) {
-        print("do division")
-        save = Double(String(showResult.text!))!
-        isClickNumber = false
-        divClick = true
-    }
-    
-    var mulClick : Bool = false
-    @IBAction func button_Mul(_ sender: Any) {
-        print("do multiply")
-        save = Double(String(showResult.text!))!
-        isClickNumber = false
-        mulClick = true
-    }
-    
-    var minClick : Bool = false
-    @IBAction func button_Min(_ sender: Any) {
-        print("do minus")
-        save = Double(String(showResult.text!))!
-        isClickNumber = false
-        minClick = true
-    }
-    
-    @IBAction func button_Reverse(_ sender: Any) {
-        print("make reverse")
-        let temp : Double = Double(String(showResult.text!))!
-        showResult.text = String(-temp)
-        print("reverse result : \(String(describing: showResult.text))")
-    }
-    
-    @IBAction func button_Percentage(_ sender: Any) {
-        print("make percentage")
-        let temp : Double = Double(String(showResult.text!))!
-        showResult.text = String(temp / 100)
-        print("percentage : \(result)")
-    }
     
 }
