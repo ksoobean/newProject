@@ -6,157 +6,135 @@
 //  Copyright © 2019 김수빈. All rights reserved.
 //
 
+/// number0 ~ number9, dot : tag 0 ~ 10
+/// AC, +/-, % : tag 11, 12, 13
+/// +, -, x, /, = : tag 14, 15, 16, 17, 18
+
+// 주석쓰기 최대한 자세하게.. 제발... (단축키 : command + option  + /)
+// 입력했던 값 결과창 위에다 표시 추가.
+// 모달. 1번에서 두번째 화면에 back 버튼 지우고 모달뷰 추가.
+
 import Foundation
 import UIKit
 
-// custom class로 원형 버튼 한번에 만들기
+/// UIButton 클래스를 상속하는 custom class UIRoundButton을 만들어서 버튼의 디자인을 한번에 입혀줌
 class UIRoundButton : UIButton {
     required init(coder aDecoder : NSCoder) {
         super.init(coder : aDecoder)!
         
-        self.layer.cornerRadius = self.frame.width/2
-        self.layer.masksToBounds = true
+        // 태그를 custom class에서 한번에 만들어줄 수 있음(태그 : ui의 id 같은 것)
+        
+        if self.tag == 0 {
+            // number0 버튼의 양쪽 끝을 둥글게 입혀줌
+            self.layer.cornerRadius = self.frame.width/5
+            self.layer.masksToBounds = true
+        } else {
+            // 정사각형의 버튼을 원으로 모양 변경 후 입혀줌
+            self.layer.cornerRadius = self.frame.width/2
+            self.layer.masksToBounds = true
+        }
+        
     }
+    
 }
 
 class CalculatorView : UIViewController {
 
-    @IBOutlet var number0: UIButton!
-   
-    @IBOutlet var number1: UIButton!
-    @IBOutlet var number2: UIButton!
-    @IBOutlet var number3: UIButton!
-    @IBOutlet var number4: UIButton!
-    @IBOutlet var number5: UIButton!
-    @IBOutlet var number6: UIButton!
-    @IBOutlet var number7: UIButton!
-    @IBOutlet var number8: UIButton!
-    @IBOutlet var number9: UIButton!
-    @IBOutlet var clear: UIButton!
-    @IBOutlet var reverse: UIButton!
-    @IBOutlet var percent: UIButton!
-    @IBOutlet var divide: UIButton!
-    @IBOutlet var multiply: UIButton!
-    @IBOutlet var minus: UIButton!
-    @IBOutlet var plus: UIButton!
-    @IBOutlet var equal: UIButton!
-    @IBOutlet var dot: UIButton!
+    // 상속 클래스를 명확히 해줄 것.
+    @IBOutlet var number0: UIRoundButton!
+    @IBOutlet var number1: UIRoundButton!
+    @IBOutlet var number2: UIRoundButton!
+    @IBOutlet var number3: UIRoundButton!
+    @IBOutlet var number4: UIRoundButton!
+    @IBOutlet var number5: UIRoundButton!
+    @IBOutlet var number6: UIRoundButton!
+    @IBOutlet var number7: UIRoundButton!
+    @IBOutlet var number8: UIRoundButton!
+    @IBOutlet var number9: UIRoundButton!
+    @IBOutlet var dot: UIRoundButton!
+    @IBOutlet var clear: UIRoundButton!
+    @IBOutlet var reverse: UIRoundButton!
+    @IBOutlet var percent: UIRoundButton!
+    @IBOutlet var divide: UIRoundButton!
+    @IBOutlet var multiply: UIRoundButton!
+    @IBOutlet var minus: UIRoundButton!
+    @IBOutlet var plus: UIRoundButton!
+    @IBOutlet var equal: UIRoundButton!
     
+    // 결과 보여주는 창
     @IBOutlet var showResult: UILabel!
+    // 계산 결과
+    var result : String = String()
     
-    var save : Double = 0   // 중간 계산 결과
-    var input_operator : String = ""    // 연산자 입력
-    var result : Double = 0 // 최종 출력할 결과
+    
+    // 최종 결과 표시 이전에 입력한 식(formula)
+    @IBOutlet var showFormula: UILabel!
+    // 숫자, 연산 기호를 배열에 차례로 담음
+    var formula: [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        number0.layer.cornerRadius = number0.frame.width/4
-        number0.layer.masksToBounds = true
     }
     
+    // 입력한 숫자
+    var currentNumber : Double = Double()
+    
     // 클릭한 버튼의 text를 읽고 showResult Label에 보여줌
-    var isClickNumber = false
+    var isNumberClicked = false
     @IBAction func isClickNumber(button : UIButton) {
         // var clickednumber was never mutated sol) var -> let)
         let clickednumber = button.titleLabel?.text
-        if isClickNumber {
-            showResult.text = showResult.text! + clickednumber!
+        if isNumberClicked {
+            showResult.text! = showResult.text! + clickednumber!
         } else {
-            showResult.text = clickednumber!
-            isClickNumber = true
+            // 숫자를 처음 클릭했을 때
+            showResult.text! = clickednumber!
+            isNumberClicked = true
         }
     }
     
-    var plusClick : Bool = false
-    var minClick : Bool = false
-    var mulClick : Bool = false
-    var divClick : Bool = false
     
-    @IBAction func calculate(button : UIButton) {
-        let clickedOperator = button.titleLabel?.text
+    // 숫자, dot을 제외한 버튼들이 선택됐을 때
+    /// AC, +/-, % : tag 11, 12, 13
+    /// +, -, x, /, = : tag 14, 15, 16, 17, 18
+    
+    var priority : Int = 0
+    @IBAction func clickedOperator(_ sender: UIRoundButton) {
         
-        switch clickedOperator {
+        formula.append(showResult.text!)
+        
+        // 새로운 수를 입력받기 위함
+        isNumberClicked = false
+        
+        switch sender.tag {
             
-        case "+" :
-            print("do plus")
-            save = Double(String(showResult.text!))!
-            isClickNumber = false
-            plusClick = true
+        case 11 : //"AC"
+            showResult.text = "0"
+            formula.removeAll()
+            showFormula.text = ""
             
-        case "-" :
-            print("do minus")
-            save = Double(String(showResult.text!))!
-            isClickNumber = false
-            minClick = true
+        case 14 : //"+"
+            formula.append("+")
+        case 15 : //"-"
+            formula.append("-")
+        case 16 : //"*"
+            formula.append("*")
+        case 17 : //"/"
+            formula.append("/")
             
-        case "x" :
-            print("do multiply")
-            save = Double(String(showResult.text!))!
-            isClickNumber = false
-            mulClick = true
-            
-        case "/" :
-            print("do division")
-            save = Double(String(showResult.text!))!
-            isClickNumber = false
-            divClick = true
-            
-        case "%" :
-            print("make percentage")
-            save = Double(String(showResult.text!))!
-            showResult.text = String(save / 100)
-            
-        case "+/-" :
-            print("make reverse")
-            save = Double(String(showResult.text!))!
-            showResult.text = String(-save)
-            
-        case "=" :
-            print("default")
-            showValue()
-            
-        default :   // "AC"
-            print("clear all")
-            save = 0
-            result = 0
-            showResult.text = ""
+        default : //"="
+            showFormula.text = formula.joined()
+            calculate(formula : formula)
+            showResult.text = result
         }
     }
-    
-    func showValue() {
-        print("show final value on label")
+
+    func calculate(formula : [String]) -> String{
         
-        let lastValue : Double = Double(String(showResult.text!))!
-        
-        if plusClick == true {
-            result = save + lastValue
-            showResult.text = "\(result)"
-            plusClick = false
+        for i in 0...(formula.count - 1) {
+            
         }
-        if minClick == true {
-            result = save - lastValue
-            showResult.text = "\(result)"
-            minClick = false
-        }
-        if mulClick == true {
-            result = save * lastValue
-            showResult.text = "\(result)"
-            mulClick = false
-        }
-        if divClick == true {
-            if lastValue != 0 {
-                result = save / lastValue
-                showResult.text = "\(result)"
-            } else {
-                showResult.text = "오류"
-            }
-            divClick = false
-        }
-        
-        print("result : \(result)")
+        return result
     }
-    
-    
-    
 }

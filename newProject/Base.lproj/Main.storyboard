@@ -83,7 +83,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="29"/>
                                 <state key="normal" title="페이지 이동"/>
                                 <connections>
-                                    <segue destination="gkR-HE-6uQ" kind="push" id="xVS-rV-UNX"/>
+                                    <segue destination="gkR-HE-6uQ" kind="push" id="O1t-6P-c5H"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="첫번째 화면" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gkz-Yp-BeP">
@@ -133,7 +133,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="headTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gk9-mo-0dT" customClass="UIRoundButton" customModule="newProject" customModuleProvider="target">
+                            <button opaque="NO" tag="11" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="headTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gk9-mo-0dT" customClass="UIRoundButton" customModule="newProject" customModuleProvider="target">
                                 <rect key="frame" x="17" y="276" width="70" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -142,10 +142,10 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="calculateWithButton:" destination="JK4-n2-6FN" eventType="touchUpInside" id="HOc-i3-d6g"/>
+                                    <action selector="clickedOperator:" destination="JK4-n2-6FN" eventType="touchUpInside" id="KKw-OQ-iA7"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="headTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EjP-fe-ASK" customClass="UIRoundButton" customModule="newProject" customModuleProvider="target">
+                            <button opaque="NO" tag="12" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="headTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EjP-fe-ASK" customClass="UIRoundButton" customModule="newProject" customModuleProvider="target">
                                 <rect key="frame" x="110" y="277" width="70" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -153,11 +153,8 @@
                                 <state key="normal" title="+/-">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
-                                <connections>
-                                    <action selector="calculateWithButton:" destination="JK4-n2-6FN" eventType="touchUpInside" id="ZDU-Yo-PqF"/>
-                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="headTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gbn-DJ-MMa" customClass="UIRoundButton" customModule="newProject" customModuleProvider="target">
+                            <button opaque="NO" tag="13" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="headTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gbn-DJ-MMa" customClass="UIRoundButton" customModule="newProject" customModuleProvider="target">
                                 <rect key="frame" x="197" y="276" width="70" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -165,11 +162,8 @@
                                 <state key="normal" title="%">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
-                                <connections>
-                                    <action selector="calculateWithButton:" destination="JK4-n2-6FN" eventType="touchUpInside" id="War-oD-19h"/>
-                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="headTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QNm-EX-dh3" customClass="UIRoundButton" customModule="newProject" customModuleProvider="target">
+                            <button opaque="NO" tag="7" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="headTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QNm-EX-dh3" customClass="UIRoundButton" customModule="newProject" customModuleProvider="target">
                                 <rect key="frame" x="18" y="366" width="70" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -181,7 +175,7 @@
                                     <action selector="isClickNumberWithButton:" destination="JK4-n2-6FN" eventType="touchUpInside" id="snT-We-5qz"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="headTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cqR-Ya-Rpm" customClass="UIRoundButton" customModule="newProject" customModuleProvider="target">
+                            <button opaque="NO" tag="8" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="headTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cqR-Ya-Rpm" customClass="UIRoundButton" customModule="newProject" customModuleProvider="target">
                                 <rect key="frame" x="111" y="367" width="70" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -193,7 +187,7 @@
                                     <action selector="isClickNumberWithButton:" destination="JK4-n2-6FN" eventType="touchUpInside" id="mAf-pg-5Fe"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="headTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NWU-kC-7FN" customClass="UIRoundButton" customModule="newProject" customModuleProvider="target">
+                            <button opaque="NO" tag="9" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="headTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NWU-kC-7FN" customClass="UIRoundButton" customModule="newProject" customModuleProvider="target">
                                 <rect key="frame" x="198" y="366" width="70" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -205,7 +199,7 @@
                                     <action selector="isClickNumberWithButton:" destination="JK4-n2-6FN" eventType="touchUpInside" id="z6R-n8-abN"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="headTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EJZ-rA-gTg" customClass="UIRoundButton" customModule="newProject" customModuleProvider="target">
+                            <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="headTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EJZ-rA-gTg" customClass="UIRoundButton" customModule="newProject" customModuleProvider="target">
                                 <rect key="frame" x="20" y="453" width="70" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -217,7 +211,7 @@
                                     <action selector="isClickNumberWithButton:" destination="JK4-n2-6FN" eventType="touchUpInside" id="X9c-AY-hAx"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="headTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o5p-82-3JK" customClass="UIRoundButton" customModule="newProject" customModuleProvider="target">
+                            <button opaque="NO" tag="5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="headTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o5p-82-3JK" customClass="UIRoundButton" customModule="newProject" customModuleProvider="target">
                                 <rect key="frame" x="111" y="455" width="70" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -229,7 +223,7 @@
                                     <action selector="isClickNumberWithButton:" destination="JK4-n2-6FN" eventType="touchUpInside" id="xjh-EP-T3g"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="headTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dxm-HM-9fl" customClass="UIRoundButton" customModule="newProject" customModuleProvider="target">
+                            <button opaque="NO" tag="6" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="headTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dxm-HM-9fl" customClass="UIRoundButton" customModule="newProject" customModuleProvider="target">
                                 <rect key="frame" x="198" y="454" width="70" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -241,7 +235,7 @@
                                     <action selector="isClickNumberWithButton:" destination="JK4-n2-6FN" eventType="touchUpInside" id="QKO-fd-YHi"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="headTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ccY-vm-QBj" customClass="UIRoundButton" customModule="newProject" customModuleProvider="target">
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="headTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ccY-vm-QBj" customClass="UIRoundButton" customModule="newProject" customModuleProvider="target">
                                 <rect key="frame" x="20" y="537" width="70" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -253,7 +247,7 @@
                                     <action selector="isClickNumberWithButton:" destination="JK4-n2-6FN" eventType="touchUpInside" id="PZ7-H5-V52"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="headTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vGG-kQ-DiA" customClass="UIRoundButton" customModule="newProject" customModuleProvider="target">
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="headTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vGG-kQ-DiA" customClass="UIRoundButton" customModule="newProject" customModuleProvider="target">
                                 <rect key="frame" x="198" y="537" width="70" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -265,7 +259,7 @@
                                     <action selector="isClickNumberWithButton:" destination="JK4-n2-6FN" eventType="touchUpInside" id="V9Z-61-B8g"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="headTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XtF-wo-h3j" customClass="UIRoundButton" customModule="newProject" customModuleProvider="target">
+                            <button opaque="NO" tag="17" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="headTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XtF-wo-h3j" customClass="UIRoundButton" customModule="newProject" customModuleProvider="target">
                                 <rect key="frame" x="289" y="275" width="70" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.63808472660000004" blue="0.60930063440000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -274,10 +268,10 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="calculateWithButton:" destination="JK4-n2-6FN" eventType="touchUpInside" id="Lzp-Ku-ko3"/>
+                                    <action selector="clickedOperator:" destination="JK4-n2-6FN" eventType="touchUpInside" id="e0E-ZU-icg"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="headTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gKU-YR-iaD" customClass="UIRoundButton" customModule="newProject" customModuleProvider="target">
+                            <button opaque="NO" tag="16" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="headTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gKU-YR-iaD" customClass="UIRoundButton" customModule="newProject" customModuleProvider="target">
                                 <rect key="frame" x="289" y="365" width="70" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.63808472660000004" blue="0.60930063440000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -286,10 +280,10 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="calculateWithButton:" destination="JK4-n2-6FN" eventType="touchUpInside" id="i8c-0S-1mY"/>
+                                    <action selector="clickedOperator:" destination="JK4-n2-6FN" eventType="touchUpInside" id="0fL-gY-C4c"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="headTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WUl-8x-HO5" customClass="UIRoundButton" customModule="newProject" customModuleProvider="target">
+                            <button opaque="NO" tag="15" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="headTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WUl-8x-HO5" customClass="UIRoundButton" customModule="newProject" customModuleProvider="target">
                                 <rect key="frame" x="289" y="453" width="70" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.63808472660000004" blue="0.60930063440000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -298,10 +292,10 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="calculateWithButton:" destination="JK4-n2-6FN" eventType="touchUpInside" id="UZi-yJ-MQs"/>
+                                    <action selector="clickedOperator:" destination="JK4-n2-6FN" eventType="touchUpInside" id="ZqQ-a7-px0"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="headTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gOO-70-kzl" customClass="UIRoundButton" customModule="newProject" customModuleProvider="target">
+                            <button opaque="NO" tag="14" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="headTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gOO-70-kzl" customClass="UIRoundButton" customModule="newProject" customModuleProvider="target">
                                 <rect key="frame" x="288" y="536" width="70" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.63808472660000004" blue="0.60930063440000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -310,10 +304,10 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="calculateWithButton:" destination="JK4-n2-6FN" eventType="touchUpInside" id="ZC8-Oa-Rg5"/>
+                                    <action selector="clickedOperator:" destination="JK4-n2-6FN" eventType="touchUpInside" id="9yj-4I-LCm"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="headTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1pI-DO-qx6" customClass="UIRoundButton" customModule="newProject" customModuleProvider="target">
+                            <button opaque="NO" tag="18" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="headTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1pI-DO-qx6" customClass="UIRoundButton" customModule="newProject" customModuleProvider="target">
                                 <rect key="frame" x="288" y="623" width="70" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.63808472660000004" blue="0.60930063440000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -322,10 +316,10 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="calculateWithButton:" destination="JK4-n2-6FN" eventType="touchUpInside" id="d4h-hf-m9K"/>
+                                    <action selector="clickedOperator:" destination="JK4-n2-6FN" eventType="touchUpInside" id="MKR-aZ-VpK"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="headTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mmb-5u-WvJ">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="headTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mmb-5u-WvJ" customClass="UIRoundButton" customModule="newProject" customModuleProvider="target">
                                 <rect key="frame" x="17" y="625" width="164" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -337,7 +331,7 @@
                                     <action selector="isClickNumberWithButton:" destination="JK4-n2-6FN" eventType="touchUpInside" id="OFb-Bg-tQ4"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="headTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F1B-4Z-h3f" customClass="UIRoundButton" customModule="newProject" customModuleProvider="target">
+                            <button opaque="NO" tag="10" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="headTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F1B-4Z-h3f" customClass="UIRoundButton" customModule="newProject" customModuleProvider="target">
                                 <rect key="frame" x="198" y="624" width="70" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -349,7 +343,7 @@
                                     <action selector="isClickNumberWithButton:" destination="JK4-n2-6FN" eventType="touchUpInside" id="HXD-av-Ebx"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="headTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h5V-ql-qcR" customClass="UIRoundButton" customModule="newProject" customModuleProvider="target">
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="headTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h5V-ql-qcR" customClass="UIRoundButton" customModule="newProject" customModuleProvider="target">
                                 <rect key="frame" x="110" y="537" width="70" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -361,6 +355,13 @@
                                     <action selector="isClickNumberWithButton:" destination="JK4-n2-6FN" eventType="touchUpInside" id="aMT-KE-MJs"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O2v-Vd-odk">
+                                <rect key="frame" x="16" y="132" width="343" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <color key="textColor" red="1" green="0.95513359695713218" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                         <viewLayoutGuide key="safeArea" id="PXi-We-Tu8"/>
@@ -386,6 +387,7 @@
                         <outlet property="percent" destination="Gbn-DJ-MMa" id="MjQ-pR-9l8"/>
                         <outlet property="plus" destination="gOO-70-kzl" id="CVB-bx-J8u"/>
                         <outlet property="reverse" destination="EjP-fe-ASK" id="FP9-yV-RGN"/>
+                        <outlet property="showFormula" destination="O2v-Vd-odk" id="0Zz-ae-jAj"/>
                         <outlet property="showResult" destination="ieL-PV-gwU" id="0fj-vR-sRw"/>
                     </connections>
                 </viewController>
@@ -408,15 +410,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yKA-le-T6m">
-                                <rect key="frame" x="147" y="417" width="80" height="58"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="38"/>
-                                <state key="normal" title="back"/>
-                                <connections>
-                                    <segue destination="BYZ-38-t0r" kind="push" id="bbD-xi-qc7"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="95x-WD-BzR"/>
@@ -428,7 +421,4 @@
             <point key="canvasLocation" x="1055" y="-375"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="bbD-xi-qc7"/>
-    </inferredMetricsTieBreakers>
 </document>
