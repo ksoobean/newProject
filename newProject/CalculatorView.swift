@@ -14,6 +14,13 @@
 // 입력했던 값 결과창 위에다 표시 추가.
 // 모달. 1번에서 두번째 화면에 back 버튼 지우고 모달뷰 추가.
 
+
+/*
+ 개선해야할 사항.
+    - 연산자 입력 후 다음 숫자 입력 시 한자리만 입력이 되는 것
+    - 소수점
+ */
+
 import Foundation
 import UIKit
 
@@ -43,7 +50,6 @@ class CalculatorView : UIViewController {
     // 상속 클래스를 명확히 해줄 것.
     // 코드 상으로 버튼 속성에 접근, 변경이 필요없으면 선언할 필요 없음!
     //@IBOutlet var number0: UIRoundButton!
-    @IBOutlet var buttonPlus: UIRoundButton!
     
     var saveValue = "";
     var newValue = "";
@@ -62,22 +68,21 @@ class CalculatorView : UIViewController {
 
     @IBAction func isClickNumber(button : UIRoundButton) {
         
-        // 숫자 버튼을 클릭할 때 showResult 라벨에 표시함.
-        let clickednumber = (button.titleLabel!.text)!
-        
-        if showResult.text != "" {
-            // 숫자가 입력중일 때
-            showResult.text! += clickednumber
-        } else {
-            // 입력된 숫자가 없을 때
-            showResult.text = clickednumber
+        // showResult label에 0이 입력되어 있을 때 0 삭제
+        if showResult.text == "0" {
+            showResult.text = ""
         }
         
-        // 저장된 값이 있을 때
+        // 숫자 버튼을 클릭할 때 showResult 라벨에 표시함.
+        let clickednumber = (button.titleLabel!.text)!
+        showResult.text! += clickednumber
+        
+        
+        // saveValue가 있을 때
         if saveValue != "" {
-            // showResult 라벨의 숫자를 읽어서 newValue에 저장
             
-            newValue = String(showResult.text!)
+            // showResult 라벨의 숫자를 읽어서 newValue에 저장
+            newValue += clickednumber
             
             // 계산을 위해 saveValue와 newValue의 값을 Double형으로 바꿈
             let tmp1 : Double = Double(saveValue)!
@@ -105,6 +110,7 @@ class CalculatorView : UIViewController {
                 result = divide(save : tmp1, new : tmp2)
                 showResult.text = String(result)
             }
+        } else {
         }
     }
     
@@ -112,6 +118,18 @@ class CalculatorView : UIViewController {
         let clickedOpt = button.tag
         /// AC, +/-, % : tag 11, 12, 13
         /// +, -, x, /, = : tag 14, 15, 16, 17, 18
+        
+        
+        if saveValue.isEmpty {
+            var firstValue = "";
+            firstValue = String(showResult.text!)
+            formula.append(firstValue)
+            saveValue = firstValue
+        }
+        
+//        연산자를 누를 때 showResult Label의 text를 saveValue에 저장
+//        누른 연산자를 calculator에 저장
+//        다음 새로운 값을 입력받기 위해 showResult Label과 newValue를 비워줌
         switch clickedOpt {
         case 11 :   // AC
             showResult.text = "0"
@@ -158,33 +176,44 @@ class CalculatorView : UIViewController {
             } else if calculator == "/" {
                 result = divide(save : tmp1, new : tmp2)
             } else {
+                result = Double(showResult.text!)!
             }
             
             showResult.text = String(result)
             formula.append("= \(result)")
             showFormula.text = formula
             formula = ""
+            saveValue = ""
+            
         }
         
     }
     
+    // 덧셈을 수행하는 함수
     func plus(save : Double, new : Double) -> Double {
         calculator = ""
         return save + new
     }
     
+    // 뺄샘을 수행하는 함수
     func minus(save : Double, new : Double) -> Double {
         calculator = ""
         return save - new
     }
     
+    // 곱셈을 수행하는 함수
     func multiply(save : Double, new : Double) -> Double {
         calculator = ""
         return save * new
     }
     
+    // 나눗셈을 수행하는 함수
     func divide(save : Double, new : Double) -> Double {
         calculator = ""
-        return save / new
+        if new != 0 {
+            return save / new
+        } else {
+            return 0
+        }
     }
 }
