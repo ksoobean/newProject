@@ -18,7 +18,8 @@
 /*
  개선해야할 사항.
     - 연산자 입력 후 다음 숫자 입력 시 한자리만 입력이 되는 것
-    - 소수점
+    - 소수점 -> "." 버튼을 disabled로 전환.
+    - 연산자를 연속적으로 눌렀을 때
  */
 
 import Foundation
@@ -50,6 +51,8 @@ class CalculatorView : UIViewController {
     // 상속 클래스를 명확히 해줄 것.
     // 코드 상으로 버튼 속성에 접근, 변경이 필요없으면 선언할 필요 없음!
     //@IBOutlet var number0: UIRoundButton!
+    @IBOutlet var buttonDot: UIRoundButton!
+    
     
     var saveValue = "";
     var newValue = "";
@@ -65,65 +68,37 @@ class CalculatorView : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-
+    
+    
     @IBAction func isClickNumber(button : UIRoundButton) {
+        
+        // 숫자 버튼을 클릭할 때 showResult 라벨에 표시함.
+        let clickednumber = (button.titleLabel!.text)!
         
         // showResult label에 0이 입력되어 있을 때 0 삭제
         if showResult.text == "0" {
             showResult.text = ""
         }
         
-        // 숫자 버튼을 클릭할 때 showResult 라벨에 표시함.
-        let clickednumber = (button.titleLabel!.text)!
         showResult.text! += clickednumber
         
-        
-        // saveValue가 있을 때
-        if saveValue != "" {
-            
-            // showResult 라벨의 숫자를 읽어서 newValue에 저장
-            newValue += clickednumber
-            
-            // 계산을 위해 saveValue와 newValue의 값을 Double형으로 바꿈
-            let tmp1 : Double = Double(saveValue)!
-            let tmp2 : Double = Double(newValue)!
-            
-            // calculator에 해당하는 계산을 함수로 하고 결과를 result에 저장, showResult 라벨에 표시
-            if calculator == "+" {
-                formula.append(calculator)
-                formula.append(newValue)
-                result = plus(save : tmp1, new : tmp2)
-                showResult.text = String(result)
-            } else if calculator == "-" {
-                formula.append(calculator)
-                formula.append(newValue)
-                result = minus(save : tmp1, new : tmp2)
-                showResult.text = String(result)
-            } else if calculator == "*" {
-                formula.append(calculator)
-                formula.append(newValue)
-                result = multiply(save : tmp1, new : tmp2)
-                showResult.text = String(result)
-            } else if calculator == "/" {
-                formula.append(calculator)
-                formula.append(newValue)
-                result = divide(save : tmp1, new : tmp2)
-                showResult.text = String(result)
-            }
+        // 숫자를 입력 중 showResult의 text 가장 마지막이 "."이면 "." 버튼 클릭 disabled 상태로 변경
+        if String(showResult.text!).last == "." {
+            buttonDot.isUserInteractionEnabled = false
         } else {
+            buttonDot.isUserInteractionEnabled = true
         }
+
     }
     
     @IBAction func isOptClick(button : UIRoundButton) {
         let clickedOpt = button.tag
         /// AC, +/-, % : tag 11, 12, 13
         /// +, -, x, /, = : tag 14, 15, 16, 17, 18
-        
-        
+
         if saveValue.isEmpty {
-            var firstValue = "";
+            var firstValue : String = "";
             firstValue = String(showResult.text!)
-            formula.append(firstValue)
             saveValue = firstValue
         }
         
@@ -131,89 +106,128 @@ class CalculatorView : UIViewController {
 //        누른 연산자를 calculator에 저장
 //        다음 새로운 값을 입력받기 위해 showResult Label과 newValue를 비워줌
         switch clickedOpt {
+            
         case 11 :   // AC
             showResult.text = "0"
             calculator = ""
-        case 12 :   // +/-
-            let tmp : Double = -Double(String(showResult.text!))!
-            saveValue = String(tmp)
+            saveValue = ""
+            newValue = ""
+            formula = ""
+            
+        case 12 :   // +/- 버튼
+            let tmp : Double = Double(showResult.text!) ?? 0
+            saveValue = String(-tmp)
             showResult.text = saveValue
             newValue = ""
-        case 13 :   // %
-            let tmp : Double = Double(String(showResult.text!))! * 0.01
-            saveValue = String(tmp)
+            
+        case 13 :   // % 버튼
+            let tmp : Double = Double(showResult.text!) ?? 0
+            saveValue = String(tmp * 0.01)
             showResult.text = saveValue
             newValue = ""
-        case 14 :   // +
-            saveValue = String(showResult.text!)
+            
+        case 14 :   // + 버튼
+            let tmp1 : Double = Double(saveValue) ?? 0
+            let tmp2 : Double = Double(showResult.text!) ??  0
+            
+            saveValue = calculate(save: tmp1, new: tmp2)
+            
             calculator = "+"
-            showResult.text = ""
-            newValue = ""
-        case 15 :   // -
-            saveValue = String(showResult.text!)
-            calculator = "-"
-            showResult.text = ""
-            newValue = ""
-        case 16 :   // *
-            saveValue = String(showResult.text!)
-            calculator = "*"
-            showResult.text = ""
-            newValue = ""
-        case 17 :   // /
-            saveValue = String(showResult.text!)
-            calculator = "/"
-            showResult.text = ""
-            newValue = ""
-        default:    // =
-            let tmp1 : Double = Double(saveValue)!
-            let tmp2 : Double = Double(newValue)!
-            if calculator == "+" {
-                result = plus(save : tmp1, new : tmp2)
-            } else if calculator == "-" {
-                result = minus(save : tmp1, new : tmp2)
-            } else if calculator == "*" {
-                result = multiply(save : tmp1, new : tmp2)
-            } else if calculator == "/" {
-                result = divide(save : tmp1, new : tmp2)
+            
+            if formula.last == "+" || formula.last == "-" || formula.last == "*" || formula.last == "/" {
             } else {
-                result = Double(showResult.text!)!
+                formula.append(calculator)
             }
             
-            showResult.text = String(result)
-            formula.append("= \(result)")
+            showResult.text = ""
+            newValue = ""
+            
+            
+        case 15 :   // - 버튼
+            let tmp1 : Double = Double(saveValue) ?? 0
+            let tmp2 : Double = Double(showResult.text!) ?? 0
+            
+            saveValue = calculate(save: tmp1, new: tmp2)
+            
+            calculator = "-"
+            
+            if formula.last == "+" || formula.last == "-" || formula.last == "*" || formula.last == "/" {
+            } else {
+                formula.append(calculator)
+            }
+            
+            showResult.text = ""
+            newValue = ""
+            
+        case 16 :   // * 버튼
+            let tmp1 : Double = Double(saveValue) ?? 0
+            let tmp2 : Double = Double(showResult.text!) ?? 0
+            
+            saveValue = calculate(save: tmp1, new: tmp2)
+            
+            calculator = "*"
+            
+            if formula.last == "+" || formula.last == "-" || formula.last == "*" || formula.last == "/" {
+            } else {
+                formula.append(calculator)
+            }
+            
+            showResult.text = ""
+            newValue = ""
+        case 17 :   // / 버튼
+            let tmp1 : Double = Double(saveValue) ?? 0
+            let tmp2 : Double = Double(showResult.text!) ?? 0
+            
+            saveValue = calculate(save: tmp1, new: tmp2)
+            
+            calculator = "/"
+            
+            if formula.last == "+" || formula.last == "-" || formula.last == "*" || formula.last == "/" {
+            } else {
+                formula.append(calculator)
+            }
+            
+            showResult.text = ""
+            newValue = ""
+            
+        default:    // = 버튼
+            let tmp1 : Double = Double(saveValue) ?? 0
+            let tmp2 : Double = Double(showResult.text!) ?? 0
+            
+            saveValue = calculate(save: tmp1, new: tmp2)
+            
+            showResult.text = String(saveValue)
+            formula.append("= \(saveValue)")
             showFormula.text = formula
             formula = ""
             saveValue = ""
+            calculator = ""
             
         }
         
     }
     
-    // 덧셈을 수행하는 함수
-    func plus(save : Double, new : Double) -> Double {
-        calculator = ""
-        return save + new
-    }
-    
-    // 뺄샘을 수행하는 함수
-    func minus(save : Double, new : Double) -> Double {
-        calculator = ""
-        return save - new
-    }
-    
-    // 곱셈을 수행하는 함수
-    func multiply(save : Double, new : Double) -> Double {
-        calculator = ""
-        return save * new
-    }
-    
-    // 나눗셈을 수행하는 함수
-    func divide(save : Double, new : Double) -> Double {
-        calculator = ""
-        if new != 0 {
-            return save / new
+    func calculate(save : Double, new : Double) -> String {
+        
+        formula += showResult.text!
+        
+        if calculator == "+" {
+            saveValue = "\(save + new)"
+        } else if calculator == "-" {
+            saveValue = "\(save - new)"
+        } else if calculator == "*" {
+            saveValue = "\(save * new)"
+        } else if calculator == "/" {
+            if new != 0 {
+                saveValue = "\(save / new)"
+            } else {
+                saveValue = "오류"
+            }
         } else {
-            return 0
+            saveValue = showResult.text!
         }
+        
+        return saveValue
     }
+    
 }

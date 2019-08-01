@@ -135,7 +135,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ieL-PV-gwU">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ieL-PV-gwU">
                                 <rect key="frame" x="16" y="174" width="343" height="85"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="60"/>
@@ -343,7 +343,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="isClickNumberWithButton:" destination="JK4-n2-6FN" eventType="touchUpInside" id="bl1-j6-Dln"/>
+                                    <action selector="isClickNumberWithButton:" destination="JK4-n2-6FN" eventType="touchUpInside" id="uEm-KX-JhS"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="headTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h5V-ql-qcR" customClass="UIRoundButton" customModule="newProject" customModuleProvider="target">
@@ -383,6 +383,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="azt-FV-Ln9"/>
                     <connections>
+                        <outlet property="buttonDot" destination="F1B-4Z-h3f" id="hGA-YX-fxs"/>
                         <outlet property="showFormula" destination="O2v-Vd-odk" id="W22-YS-KeR"/>
                         <outlet property="showResult" destination="ieL-PV-gwU" id="UpR-sf-Fmu"/>
                     </connections>
