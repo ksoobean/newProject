@@ -109,6 +109,7 @@ class CalculatorView : UIViewController {
             
         case 11 :   // AC
             showResult.text = "0"
+            showFormula.text = ""
             calculator = ""
             saveValue = ""
             newValue = ""
