@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hVX-A8-b9j">
-    <device id="retina5_9" orientation="portrait">
+    <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,7 +15,7 @@
             <objects>
                 <viewController id="vfx-DM-aRT" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2qo-Ri-Vh7">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BGj-hb-lcW">
@@ -51,14 +51,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FkM-I1-TQ8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-794.39999999999998" y="20.689655172413794"/>
+            <point key="canvasLocation" x="-503" y="-375"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="8ZT-Cg-eWa">
             <objects>
                 <navigationController id="hVX-A8-b9j" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="DMi-EW-Exv">
-                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -67,14 +67,14 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hF9-TV-ExQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1975" y="21"/>
+            <point key="canvasLocation" x="-1258" y="-375"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="newProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k4x-ty-jfA">
@@ -132,272 +132,390 @@
             <objects>
                 <viewController id="JK4-n2-6FN" userLabel="Calculator View Controller" customClass="CalculatorView" customModule="newProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6ks-xW-HRD">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ieL-PV-gwU">
-                                <rect key="frame" x="16" y="174" width="343" height="85"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="60"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" tag="11" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="headTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gk9-mo-0dT" customClass="UIRoundButton" customModule="newProject" customModuleProvider="target">
-                                <rect key="frame" x="20" y="277" width="70" height="70"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="37"/>
-                                <state key="normal" title="AC">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="isOptClickWithButton:" destination="JK4-n2-6FN" eventType="touchUpInside" id="ZAw-4g-Dl9"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" tag="12" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="headTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EjP-fe-ASK" customClass="UIRoundButton" customModule="newProject" customModuleProvider="target">
-                                <rect key="frame" x="110" y="277" width="70" height="70"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="37"/>
-                                <state key="normal" title="+/-">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="isOptClickWithButton:" destination="JK4-n2-6FN" eventType="touchUpInside" id="4KK-xG-iCc"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" tag="13" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="headTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gbn-DJ-MMa" customClass="UIRoundButton" customModule="newProject" customModuleProvider="target">
-                                <rect key="frame" x="197" y="276" width="70" height="70"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="37"/>
-                                <state key="normal" title="%">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="isOptClickWithButton:" destination="JK4-n2-6FN" eventType="touchUpInside" id="xr3-GL-Ahz"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" tag="8" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="headTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cqR-Ya-Rpm" customClass="UIRoundButton" customModule="newProject" customModuleProvider="target">
-                                <rect key="frame" x="111" y="367" width="70" height="70"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="37"/>
-                                <state key="normal" title="8">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="isClickNumberWithButton:" destination="JK4-n2-6FN" eventType="touchUpInside" id="XWe-6H-64p"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" tag="9" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="headTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NWU-kC-7FN" customClass="UIRoundButton" customModule="newProject" customModuleProvider="target">
-                                <rect key="frame" x="198" y="366" width="70" height="70"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="37"/>
-                                <state key="normal" title="9">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="isClickNumberWithButton:" destination="JK4-n2-6FN" eventType="touchUpInside" id="9Ge-kZ-nq0"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="headTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EJZ-rA-gTg" customClass="UIRoundButton" customModule="newProject" customModuleProvider="target">
-                                <rect key="frame" x="20" y="453" width="70" height="70"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="37"/>
-                                <state key="normal" title="4">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="isClickNumberWithButton:" destination="JK4-n2-6FN" eventType="touchUpInside" id="5Kw-UK-vEi"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" tag="5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="headTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o5p-82-3JK" customClass="UIRoundButton" customModule="newProject" customModuleProvider="target">
-                                <rect key="frame" x="111" y="455" width="70" height="70"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="37"/>
-                                <state key="normal" title="5">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="isClickNumberWithButton:" destination="JK4-n2-6FN" eventType="touchUpInside" id="eAF-Ce-cpR"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" tag="6" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="headTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dxm-HM-9fl" customClass="UIRoundButton" customModule="newProject" customModuleProvider="target">
-                                <rect key="frame" x="198" y="454" width="70" height="70"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="37"/>
-                                <state key="normal" title="6">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="isClickNumberWithButton:" destination="JK4-n2-6FN" eventType="touchUpInside" id="CyW-vy-ZZ2"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="headTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ccY-vm-QBj" customClass="UIRoundButton" customModule="newProject" customModuleProvider="target">
-                                <rect key="frame" x="20" y="537" width="70" height="70"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" name=".SFNSDisplay" family=".SF NS Display" pointSize="37"/>
-                                <state key="normal" title="1">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="isClickNumberWithButton:" destination="JK4-n2-6FN" eventType="touchUpInside" id="CxW-eZ-526"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="headTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vGG-kQ-DiA" customClass="UIRoundButton" customModule="newProject" customModuleProvider="target">
-                                <rect key="frame" x="198" y="537" width="70" height="70"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="37"/>
-                                <state key="normal" title="3">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="isClickNumberWithButton:" destination="JK4-n2-6FN" eventType="touchUpInside" id="VF7-BS-STF"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" tag="17" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="headTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XtF-wo-h3j" customClass="UIRoundButton" customModule="newProject" customModuleProvider="target">
-                                <rect key="frame" x="289" y="275" width="70" height="70"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="0.63808472660000004" blue="0.60930063440000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="37"/>
-                                <state key="normal" title="/">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="isOptClickWithButton:" destination="JK4-n2-6FN" eventType="touchUpInside" id="skB-gD-egb"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" tag="16" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="headTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gKU-YR-iaD" customClass="UIRoundButton" customModule="newProject" customModuleProvider="target">
-                                <rect key="frame" x="289" y="365" width="70" height="70"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="0.63808472660000004" blue="0.60930063440000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="37"/>
-                                <state key="normal" title="x">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="isOptClickWithButton:" destination="JK4-n2-6FN" eventType="touchUpInside" id="nu3-f2-3ZI"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" tag="15" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="headTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WUl-8x-HO5" customClass="UIRoundButton" customModule="newProject" customModuleProvider="target">
-                                <rect key="frame" x="289" y="453" width="70" height="70"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="0.63808472660000004" blue="0.60930063440000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="37"/>
-                                <state key="normal" title="-">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="isOptClickWithButton:" destination="JK4-n2-6FN" eventType="touchUpInside" id="yFC-YT-ZGS"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" tag="14" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="headTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gOO-70-kzl" customClass="UIRoundButton" customModule="newProject" customModuleProvider="target">
-                                <rect key="frame" x="288" y="536" width="70" height="70"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="0.63808472660000004" blue="0.60930063440000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="37"/>
-                                <state key="normal" title="+">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="isOptClickWithButton:" destination="JK4-n2-6FN" eventType="touchUpInside" id="c6G-FO-JU8"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" tag="18" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="headTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1pI-DO-qx6" customClass="UIRoundButton" customModule="newProject" customModuleProvider="target">
-                                <rect key="frame" x="289" y="625" width="70" height="70"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="0.63808472660000004" blue="0.60930063440000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="37"/>
-                                <state key="normal" title="=">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="isOptClickWithButton:" destination="JK4-n2-6FN" eventType="touchUpInside" id="EWX-IW-rh3"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="headTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mmb-5u-WvJ" customClass="UIRoundButton" customModule="newProject" customModuleProvider="target">
-                                <rect key="frame" x="17" y="625" width="164" height="70"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="37"/>
-                                <state key="normal" title="0">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="isClickNumberWithButton:" destination="JK4-n2-6FN" eventType="touchUpInside" id="hCZ-KR-29M"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" tag="10" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="headTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F1B-4Z-h3f" customClass="UIRoundButton" customModule="newProject" customModuleProvider="target">
-                                <rect key="frame" x="198" y="624" width="70" height="70"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="37"/>
-                                <state key="normal" title=".">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="isClickNumberWithButton:" destination="JK4-n2-6FN" eventType="touchUpInside" id="uEm-KX-JhS"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="headTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h5V-ql-qcR" customClass="UIRoundButton" customModule="newProject" customModuleProvider="target">
-                                <rect key="frame" x="110" y="537" width="70" height="70"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="37"/>
-                                <state key="normal" title="2">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="isClickNumberWithButton:" destination="JK4-n2-6FN" eventType="touchUpInside" id="9zC-on-YNT"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O2v-Vd-odk">
-                                <rect key="frame" x="16" y="132" width="343" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O2v-Vd-odk">
+                                <rect key="frame" x="10" y="98" width="394" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="9eQ-eU-b2e"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                 <color key="textColor" red="1" green="0.95513359695713218" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" tag="7" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="headTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QNm-EX-dh3" customClass="UIRoundButton" customModule="newProject" customModuleProvider="target">
-                                <rect key="frame" x="20" y="367" width="70" height="70"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="37"/>
-                                <state key="normal" title="7">
+                            <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="headTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gk9-mo-0dT" customClass="UIRoundButton" customModule="newProject" customModuleProvider="target">
+                                <rect key="frame" x="10" y="208" width="91" height="105"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <state key="normal" title="AC">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="isClickNumberWithButton:" destination="JK4-n2-6FN" eventType="touchUpInside" id="jez-2b-Dx3"/>
+                                    <action selector="isOptClickWithButton:" destination="JK4-n2-6FN" eventType="touchUpInside" id="NHY-RF-PJX"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ieL-PV-gwU">
+                                <rect key="frame" x="10" y="138" width="394" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="1er-L7-DlX"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" tag="12" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="headTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sDF-Ln-Fip" customClass="UIRoundButton" customModule="newProject" customModuleProvider="target">
+                                <rect key="frame" x="111" y="208" width="91" height="105"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <state key="normal" title="+/-">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="isOptClickWithButton:" destination="JK4-n2-6FN" eventType="touchUpInside" id="7Gf-tV-kz2"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="13" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="headTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e0j-Vd-fYp" customClass="UIRoundButton" customModule="newProject" customModuleProvider="target">
+                                <rect key="frame" x="212" y="208" width="91" height="105"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <state key="normal" title="%">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="isOptClickWithButton:" destination="JK4-n2-6FN" eventType="touchUpInside" id="B99-TM-b86"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="17" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="headTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Ck-F0-zgT" customClass="UIRoundButton" customModule="newProject" customModuleProvider="target">
+                                <rect key="frame" x="313" y="208" width="91" height="105"/>
+                                <color key="backgroundColor" red="1" green="0.72805804269999996" blue="0.55608750849999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <state key="normal" title="/">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="isOptClickWithButton:" destination="JK4-n2-6FN" eventType="touchUpInside" id="j1f-DL-C0L"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="headTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Abi-31-gvS" customClass="UIRoundButton" customModule="newProject" customModuleProvider="target">
+                                <rect key="frame" x="10" y="323" width="91" height="104.5"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <state key="normal" title="7">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="isClickNumberWithButton:" destination="JK4-n2-6FN" eventType="touchUpInside" id="GDH-YI-Owj"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="headTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ROW-pr-ZH7" customClass="UIRoundButton" customModule="newProject" customModuleProvider="target">
+                                <rect key="frame" x="111" y="323" width="91" height="104.5"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <state key="normal" title="8">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="isClickNumberWithButton:" destination="JK4-n2-6FN" eventType="touchUpInside" id="c1P-Dn-els"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="16" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="headTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="37I-pc-fXm" customClass="UIRoundButton" customModule="newProject" customModuleProvider="target">
+                                <rect key="frame" x="313" y="323" width="91" height="104.5"/>
+                                <color key="backgroundColor" red="1" green="0.72805804269999996" blue="0.55608750849999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <state key="normal" title="x">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="isOptClickWithButton:" destination="JK4-n2-6FN" eventType="touchUpInside" id="hr8-gL-ZUy"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="headTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Te-LH-la7" customClass="UIRoundButton" customModule="newProject" customModuleProvider="target">
+                                <rect key="frame" x="10" y="437.5" width="91" height="105"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <state key="normal" title="4">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="isClickNumberWithButton:" destination="JK4-n2-6FN" eventType="touchUpInside" id="T2h-Ly-VYg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="headTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M9D-cf-wfH" customClass="UIRoundButton" customModule="newProject" customModuleProvider="target">
+                                <rect key="frame" x="111" y="437.5" width="91" height="105"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <state key="normal" title="5">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="isClickNumberWithButton:" destination="JK4-n2-6FN" eventType="touchUpInside" id="tQL-dr-Csb"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="headTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ggf-6d-K8b" customClass="UIRoundButton" customModule="newProject" customModuleProvider="target">
+                                <rect key="frame" x="212" y="437.5" width="91" height="105"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <state key="normal" title="6">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="isClickNumberWithButton:" destination="JK4-n2-6FN" eventType="touchUpInside" id="3bF-xf-rZY"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="15" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="headTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8e4-nR-NUT" customClass="UIRoundButton" customModule="newProject" customModuleProvider="target">
+                                <rect key="frame" x="313" y="437.5" width="91" height="105"/>
+                                <color key="backgroundColor" red="1" green="0.72805804269999996" blue="0.55608750849999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <state key="normal" title="-">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="isOptClickWithButton:" destination="JK4-n2-6FN" eventType="touchUpInside" id="bqo-wR-RqI"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="headTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Lh-Fc-Drt" customClass="UIRoundButton" customModule="newProject" customModuleProvider="target">
+                                <rect key="frame" x="10" y="552.5" width="91" height="104.5"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <state key="normal" title="1">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="isClickNumberWithButton:" destination="JK4-n2-6FN" eventType="touchUpInside" id="0Gi-GM-mAP"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="headTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="94e-mj-tfu" customClass="UIRoundButton" customModule="newProject" customModuleProvider="target">
+                                <rect key="frame" x="111" y="552.5" width="91" height="104.5"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <state key="normal" title="2">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="isClickNumberWithButton:" destination="JK4-n2-6FN" eventType="touchUpInside" id="QcN-RY-vSj"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="headTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FGy-wa-fKY" customClass="UIRoundButton" customModule="newProject" customModuleProvider="target">
+                                <rect key="frame" x="212" y="552.5" width="91" height="104.5"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <state key="normal" title="3">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="isClickNumberWithButton:" destination="JK4-n2-6FN" eventType="touchUpInside" id="wtT-3q-XD3"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="14" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="headTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3xj-UF-7M6" customClass="UIRoundButton" customModule="newProject" customModuleProvider="target">
+                                <rect key="frame" x="313" y="552.5" width="91" height="104.5"/>
+                                <color key="backgroundColor" red="1" green="0.72805804269999996" blue="0.55608750849999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <state key="normal" title="+">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="isOptClickWithButton:" destination="JK4-n2-6FN" eventType="touchUpInside" id="ve6-7H-6ej"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="headTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ezm-Vs-yWs" customClass="UIRoundButton" customModule="newProject" customModuleProvider="target">
+                                <rect key="frame" x="10" y="667" width="191.5" height="105"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <state key="normal" title="0">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="isClickNumberWithButton:" destination="JK4-n2-6FN" eventType="touchUpInside" id="jPx-ZG-PRP"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="headTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jF2-Lb-sDv" customClass="UIRoundButton" customModule="newProject" customModuleProvider="target">
+                                <rect key="frame" x="211.5" y="667" width="91.5" height="105"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <state key="normal" title=".">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="isClickNumberWithButton:" destination="JK4-n2-6FN" eventType="touchUpInside" id="IO6-dN-iVv"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="18" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="headTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="trd-D3-hTE" customClass="UIRoundButton" customModule="newProject" customModuleProvider="target">
+                                <rect key="frame" x="313" y="667" width="91" height="105"/>
+                                <color key="backgroundColor" red="1" green="0.72805804269999996" blue="0.55608750849999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <state key="normal" title="=">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="isOptClickWithButton:" destination="JK4-n2-6FN" eventType="touchUpInside" id="Jek-Ts-Cng"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="headTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NhS-jp-PAa" customClass="UIRoundButton" customModule="newProject" customModuleProvider="target">
+                                <rect key="frame" x="212" y="323" width="91" height="104.5"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <state key="normal" title="9">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="isClickNumberWithButton:" destination="JK4-n2-6FN" eventType="touchUpInside" id="mga-7T-jI8"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <constraints>
+                            <constraint firstItem="e0j-Vd-fYp" firstAttribute="height" secondItem="Ggf-6d-K8b" secondAttribute="height" id="0eC-hs-Hwm"/>
+                            <constraint firstItem="sDF-Ln-Fip" firstAttribute="top" secondItem="ieL-PV-gwU" secondAttribute="bottom" constant="20" id="0nd-6F-BJR"/>
+                            <constraint firstItem="Gk9-mo-0dT" firstAttribute="height" secondItem="0Lh-Fc-Drt" secondAttribute="height" id="1Jp-PE-OGA"/>
+                            <constraint firstItem="PXi-We-Tu8" firstAttribute="trailing" secondItem="trd-D3-hTE" secondAttribute="trailing" constant="10" id="2tn-9Z-Vo7"/>
+                            <constraint firstItem="Gk9-mo-0dT" firstAttribute="height" secondItem="8Te-LH-la7" secondAttribute="height" id="3vm-vy-Xor"/>
+                            <constraint firstItem="8Te-LH-la7" firstAttribute="leading" secondItem="PXi-We-Tu8" secondAttribute="leading" constant="10" id="4Lr-F4-1oR"/>
+                            <constraint firstItem="2Ck-F0-zgT" firstAttribute="top" secondItem="ieL-PV-gwU" secondAttribute="bottom" constant="20" id="4Sa-3q-Vig"/>
+                            <constraint firstItem="Ggf-6d-K8b" firstAttribute="leading" relation="lessThanOrEqual" secondItem="M9D-cf-wfH" secondAttribute="trailing" constant="10" id="4iX-Gc-A5J"/>
+                            <constraint firstItem="FGy-wa-fKY" firstAttribute="top" secondItem="Ggf-6d-K8b" secondAttribute="bottom" constant="10" id="5XX-d4-pAY"/>
+                            <constraint firstItem="Gk9-mo-0dT" firstAttribute="leading" secondItem="PXi-We-Tu8" secondAttribute="leading" constant="10" id="7gU-Tv-snO"/>
+                            <constraint firstItem="37I-pc-fXm" firstAttribute="top" secondItem="2Ck-F0-zgT" secondAttribute="bottom" constant="10" id="8Us-QJ-Lae"/>
+                            <constraint firstItem="e0j-Vd-fYp" firstAttribute="leading" relation="lessThanOrEqual" secondItem="sDF-Ln-Fip" secondAttribute="trailing" constant="10" id="8pA-vH-U48"/>
+                            <constraint firstItem="O2v-Vd-odk" firstAttribute="leading" secondItem="PXi-We-Tu8" secondAttribute="leading" constant="10" id="95p-CQ-G9I"/>
+                            <constraint firstItem="94e-mj-tfu" firstAttribute="top" secondItem="M9D-cf-wfH" secondAttribute="bottom" constant="10" id="9G8-A7-WmR"/>
+                            <constraint firstItem="PXi-We-Tu8" firstAttribute="bottom" relation="lessThanOrEqual" secondItem="Ezm-Vs-yWs" secondAttribute="bottom" constant="90" id="9ob-VC-fAn"/>
+                            <constraint firstItem="Abi-31-gvS" firstAttribute="leading" secondItem="PXi-We-Tu8" secondAttribute="leading" constant="10" id="A7e-bW-L52"/>
+                            <constraint firstItem="ieL-PV-gwU" firstAttribute="top" secondItem="O2v-Vd-odk" secondAttribute="bottom" constant="10" id="AKF-he-voL"/>
+                            <constraint firstItem="M9D-cf-wfH" firstAttribute="leading" relation="lessThanOrEqual" secondItem="8Te-LH-la7" secondAttribute="trailing" constant="10" id="D0W-KC-lxZ"/>
+                            <constraint firstItem="Abi-31-gvS" firstAttribute="width" secondItem="ROW-pr-ZH7" secondAttribute="width" id="DAm-8A-Hay"/>
+                            <constraint firstItem="3xj-UF-7M6" firstAttribute="top" secondItem="8e4-nR-NUT" secondAttribute="bottom" constant="10" id="GJT-31-7kp"/>
+                            <constraint firstItem="NhS-jp-PAa" firstAttribute="leading" relation="lessThanOrEqual" secondItem="ROW-pr-ZH7" secondAttribute="trailing" constant="10" id="GYD-y9-I1A"/>
+                            <constraint firstItem="Gk9-mo-0dT" firstAttribute="height" secondItem="Abi-31-gvS" secondAttribute="height" id="I8g-dV-iRE"/>
+                            <constraint firstItem="8Te-LH-la7" firstAttribute="width" secondItem="Ggf-6d-K8b" secondAttribute="width" id="IPC-WO-5uT"/>
+                            <constraint firstItem="ROW-pr-ZH7" firstAttribute="leading" relation="lessThanOrEqual" secondItem="Abi-31-gvS" secondAttribute="trailing" constant="10" id="J4a-cH-Csw"/>
+                            <constraint firstItem="e0j-Vd-fYp" firstAttribute="height" secondItem="NhS-jp-PAa" secondAttribute="height" id="JLE-ws-DdH"/>
+                            <constraint firstItem="0Lh-Fc-Drt" firstAttribute="top" secondItem="8Te-LH-la7" secondAttribute="bottom" constant="10" id="JkG-Mj-bwv"/>
+                            <constraint firstItem="e0j-Vd-fYp" firstAttribute="height" secondItem="jF2-Lb-sDv" secondAttribute="height" id="JqK-B9-dEr"/>
+                            <constraint firstItem="sDF-Ln-Fip" firstAttribute="width" secondItem="Gk9-mo-0dT" secondAttribute="width" id="KeY-oa-75Y"/>
+                            <constraint firstItem="8Te-LH-la7" firstAttribute="width" secondItem="M9D-cf-wfH" secondAttribute="width" id="LSQ-BE-79o"/>
+                            <constraint firstItem="2Ck-F0-zgT" firstAttribute="height" secondItem="trd-D3-hTE" secondAttribute="height" id="LcK-tH-smF"/>
+                            <constraint firstItem="NhS-jp-PAa" firstAttribute="top" secondItem="e0j-Vd-fYp" secondAttribute="bottom" constant="10" id="M7f-9X-ZM3"/>
+                            <constraint firstItem="Ezm-Vs-yWs" firstAttribute="top" secondItem="0Lh-Fc-Drt" secondAttribute="bottom" constant="10" id="MFK-y3-gUj"/>
+                            <constraint firstItem="sDF-Ln-Fip" firstAttribute="height" secondItem="M9D-cf-wfH" secondAttribute="height" id="Nzd-nA-ReN"/>
+                            <constraint firstItem="3xj-UF-7M6" firstAttribute="leading" relation="lessThanOrEqual" secondItem="FGy-wa-fKY" secondAttribute="trailing" constant="10" id="OQx-iV-ARc"/>
+                            <constraint firstItem="e0j-Vd-fYp" firstAttribute="top" secondItem="ieL-PV-gwU" secondAttribute="bottom" constant="20" id="Ocx-cu-Rfz"/>
+                            <constraint firstItem="Ezm-Vs-yWs" firstAttribute="width" secondItem="jF2-Lb-sDv" secondAttribute="width" multiplier="2.1" id="Q9m-6d-TCi"/>
+                            <constraint firstItem="sDF-Ln-Fip" firstAttribute="leading" relation="lessThanOrEqual" secondItem="Gk9-mo-0dT" secondAttribute="trailing" constant="10" id="QOT-NO-oeD"/>
+                            <constraint firstItem="PXi-We-Tu8" firstAttribute="trailing" secondItem="O2v-Vd-odk" secondAttribute="trailing" constant="10" id="QbA-QZ-tyv"/>
+                            <constraint firstItem="8e4-nR-NUT" firstAttribute="top" secondItem="37I-pc-fXm" secondAttribute="bottom" constant="10" id="RBz-va-8dZ"/>
+                            <constraint firstItem="sDF-Ln-Fip" firstAttribute="height" secondItem="Ezm-Vs-yWs" secondAttribute="height" id="ToD-qi-Gbq"/>
+                            <constraint firstItem="PXi-We-Tu8" firstAttribute="trailing" secondItem="ieL-PV-gwU" secondAttribute="trailing" constant="10" id="V3a-YS-vd8"/>
+                            <constraint firstItem="Gk9-mo-0dT" firstAttribute="height" secondItem="Ezm-Vs-yWs" secondAttribute="height" id="VmA-Z6-B3e"/>
+                            <constraint firstItem="PXi-We-Tu8" firstAttribute="bottom" relation="lessThanOrEqual" secondItem="trd-D3-hTE" secondAttribute="bottom" constant="90" id="WVR-bt-PoH"/>
+                            <constraint firstItem="trd-D3-hTE" firstAttribute="top" secondItem="3xj-UF-7M6" secondAttribute="bottom" constant="10" id="XgE-e2-zqa"/>
+                            <constraint firstItem="Abi-31-gvS" firstAttribute="top" secondItem="Gk9-mo-0dT" secondAttribute="bottom" constant="10" id="Y0U-R6-GhW"/>
+                            <constraint firstItem="Ezm-Vs-yWs" firstAttribute="leading" secondItem="PXi-We-Tu8" secondAttribute="leading" constant="10" id="ZHM-wa-Zc5"/>
+                            <constraint firstItem="trd-D3-hTE" firstAttribute="width" secondItem="jF2-Lb-sDv" secondAttribute="width" id="Zpr-l5-ndB"/>
+                            <constraint firstItem="FGy-wa-fKY" firstAttribute="leading" relation="lessThanOrEqual" secondItem="94e-mj-tfu" secondAttribute="trailing" constant="10" id="aa8-Lz-5Fl"/>
+                            <constraint firstItem="2Ck-F0-zgT" firstAttribute="height" secondItem="3xj-UF-7M6" secondAttribute="height" id="bme-ea-lOg"/>
+                            <constraint firstItem="2Ck-F0-zgT" firstAttribute="height" secondItem="8e4-nR-NUT" secondAttribute="height" id="brL-3e-4D5"/>
+                            <constraint firstItem="2Ck-F0-zgT" firstAttribute="height" secondItem="37I-pc-fXm" secondAttribute="height" id="chM-GP-pbm"/>
+                            <constraint firstItem="0Lh-Fc-Drt" firstAttribute="width" secondItem="3xj-UF-7M6" secondAttribute="width" id="dxT-pQ-H1V"/>
+                            <constraint firstItem="PXi-We-Tu8" firstAttribute="trailing" secondItem="3xj-UF-7M6" secondAttribute="trailing" constant="10" id="eGf-hv-jIg"/>
+                            <constraint firstItem="8Te-LH-la7" firstAttribute="top" secondItem="Abi-31-gvS" secondAttribute="bottom" constant="10" id="fcO-27-kmG"/>
+                            <constraint firstItem="Gk9-mo-0dT" firstAttribute="top" secondItem="ieL-PV-gwU" secondAttribute="bottom" constant="20" id="g1l-ul-qvF"/>
+                            <constraint firstItem="jF2-Lb-sDv" firstAttribute="leading" relation="lessThanOrEqual" secondItem="Ezm-Vs-yWs" secondAttribute="trailing" constant="10" id="g2b-Jh-P7c"/>
+                            <constraint firstItem="94e-mj-tfu" firstAttribute="leading" relation="lessThanOrEqual" secondItem="0Lh-Fc-Drt" secondAttribute="trailing" constant="10" id="hW5-Zm-9Vc"/>
+                            <constraint firstItem="Abi-31-gvS" firstAttribute="width" secondItem="37I-pc-fXm" secondAttribute="width" id="hfO-P8-jlK"/>
+                            <constraint firstItem="Abi-31-gvS" firstAttribute="width" secondItem="NhS-jp-PAa" secondAttribute="width" id="hkp-9P-DIA"/>
+                            <constraint firstItem="37I-pc-fXm" firstAttribute="leading" relation="lessThanOrEqual" secondItem="NhS-jp-PAa" secondAttribute="trailing" constant="10" id="iHS-gP-qSK"/>
+                            <constraint firstItem="8Te-LH-la7" firstAttribute="width" secondItem="8e4-nR-NUT" secondAttribute="width" id="iWe-PH-ggm"/>
+                            <constraint firstItem="ieL-PV-gwU" firstAttribute="leading" secondItem="PXi-We-Tu8" secondAttribute="leading" constant="10" id="jfg-vq-ien"/>
+                            <constraint firstItem="Ezm-Vs-yWs" firstAttribute="top" secondItem="94e-mj-tfu" secondAttribute="bottom" constant="10" id="k7f-Rw-ec5"/>
+                            <constraint firstItem="2Ck-F0-zgT" firstAttribute="leading" relation="lessThanOrEqual" secondItem="e0j-Vd-fYp" secondAttribute="trailing" constant="10" id="kka-5i-A7a"/>
+                            <constraint firstItem="O2v-Vd-odk" firstAttribute="top" secondItem="PXi-We-Tu8" secondAttribute="top" constant="10" id="nuM-wU-Qey"/>
+                            <constraint firstItem="M9D-cf-wfH" firstAttribute="top" secondItem="ROW-pr-ZH7" secondAttribute="bottom" constant="10" id="ohh-PB-DgD"/>
+                            <constraint firstItem="ROW-pr-ZH7" firstAttribute="top" secondItem="sDF-Ln-Fip" secondAttribute="bottom" constant="10" id="p2F-vN-4mg"/>
+                            <constraint firstItem="0Lh-Fc-Drt" firstAttribute="width" secondItem="94e-mj-tfu" secondAttribute="width" id="pMp-aA-M19"/>
+                            <constraint firstItem="sDF-Ln-Fip" firstAttribute="height" secondItem="94e-mj-tfu" secondAttribute="height" id="qhP-Qg-gRC"/>
+                            <constraint firstItem="Ggf-6d-K8b" firstAttribute="top" secondItem="NhS-jp-PAa" secondAttribute="bottom" constant="10" id="sV2-Pz-r6T"/>
+                            <constraint firstItem="trd-D3-hTE" firstAttribute="leading" relation="lessThanOrEqual" secondItem="jF2-Lb-sDv" secondAttribute="trailing" constant="10" id="sVF-Ij-ai5"/>
+                            <constraint firstItem="PXi-We-Tu8" firstAttribute="trailing" secondItem="37I-pc-fXm" secondAttribute="trailing" constant="10" id="su7-2i-Ypz"/>
+                            <constraint firstItem="8e4-nR-NUT" firstAttribute="leading" relation="lessThanOrEqual" secondItem="Ggf-6d-K8b" secondAttribute="trailing" constant="10" id="tGU-f2-NUW"/>
+                            <constraint firstItem="Gk9-mo-0dT" firstAttribute="width" secondItem="2Ck-F0-zgT" secondAttribute="width" id="tJI-uY-ZCX"/>
+                            <constraint firstItem="e0j-Vd-fYp" firstAttribute="height" secondItem="FGy-wa-fKY" secondAttribute="height" id="vBk-y8-7kv"/>
+                            <constraint firstItem="0Lh-Fc-Drt" firstAttribute="leading" secondItem="PXi-We-Tu8" secondAttribute="leading" constant="10" id="vV8-gu-lzg"/>
+                            <constraint firstItem="sDF-Ln-Fip" firstAttribute="height" secondItem="ROW-pr-ZH7" secondAttribute="height" id="vdl-Ti-F50"/>
+                            <constraint firstItem="Gk9-mo-0dT" firstAttribute="width" secondItem="e0j-Vd-fYp" secondAttribute="width" id="vgN-Hk-PPp"/>
+                            <constraint firstItem="PXi-We-Tu8" firstAttribute="trailing" secondItem="2Ck-F0-zgT" secondAttribute="trailing" constant="10" id="xfe-Z4-i1k"/>
+                            <constraint firstItem="PXi-We-Tu8" firstAttribute="bottom" relation="lessThanOrEqual" secondItem="jF2-Lb-sDv" secondAttribute="bottom" constant="90" id="ynT-AP-zvn"/>
+                            <constraint firstItem="0Lh-Fc-Drt" firstAttribute="width" secondItem="FGy-wa-fKY" secondAttribute="width" id="ywJ-GQ-q6Q"/>
+                            <constraint firstItem="PXi-We-Tu8" firstAttribute="trailing" secondItem="8e4-nR-NUT" secondAttribute="trailing" constant="10" id="z0m-UY-DFb"/>
+                            <constraint firstItem="jF2-Lb-sDv" firstAttribute="top" secondItem="FGy-wa-fKY" secondAttribute="bottom" constant="10" id="zUS-WX-Ffa"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="PXi-We-Tu8"/>
                     </view>
-                    <navigationItem key="navigationItem" id="azt-FV-Ln9"/>
+                    <navigationItem key="navigationItem" id="azt-FV-Ln9">
+                        <barButtonItem key="rightBarButtonItem" title="History" style="plain" id="mok-iF-qaS">
+                            <connections>
+                                <action selector="rightAction:" destination="JK4-n2-6FN" id="yzM-2r-aQq"/>
+                                <segue destination="Yda-eV-C9e" kind="push" identifier="sendArray" id="E2k-73-oeK"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
-                        <outlet property="buttonDot" destination="F1B-4Z-h3f" id="hGA-YX-fxs"/>
+                        <outlet property="historyButton" destination="mok-iF-qaS" id="7ei-P9-3Vi"/>
                         <outlet property="showFormula" destination="O2v-Vd-odk" id="W22-YS-KeR"/>
                         <outlet property="showResult" destination="ieL-PV-gwU" id="UpR-sf-Fmu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AKA-bz-T9W" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="261.60000000000002" y="296.30541871921184"/>
+            <point key="canvasLocation" x="-419" y="315"/>
+        </scene>
+        <!--Show History View-->
+        <scene sceneID="Jdt-Jr-DlE">
+            <objects>
+                <viewController id="Yda-eV-C9e" customClass="ShowHistoryView" customModule="newProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="y95-bZ-9pt">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0AJ-k6-Nuf">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="m5Y-dq-3Re">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="m5Y-dq-3Re" id="AQE-JA-5qh">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="fI0-oa-W0l" firstAttribute="bottom" secondItem="0AJ-k6-Nuf" secondAttribute="bottom" id="8zC-KZ-ffk"/>
+                            <constraint firstItem="fI0-oa-W0l" firstAttribute="trailing" secondItem="0AJ-k6-Nuf" secondAttribute="trailing" id="CcB-kp-YwH"/>
+                            <constraint firstItem="0AJ-k6-Nuf" firstAttribute="top" secondItem="fI0-oa-W0l" secondAttribute="top" id="IGd-G8-IPs"/>
+                            <constraint firstItem="0AJ-k6-Nuf" firstAttribute="leading" secondItem="fI0-oa-W0l" secondAttribute="leading" id="du4-IF-7am"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="fI0-oa-W0l"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="t2c-8p-hTP"/>
+                    <connections>
+                        <outlet property="showHistoryTableView" destination="0AJ-k6-Nuf" id="jqh-8N-J3A"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2sw-fa-cnn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="288" y="316"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="b0t-pV-0Lh">
             <objects>
                 <viewController id="gkR-HE-6uQ" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yvo-Ld-k2q">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" restorationIdentifier="uiLabel" text="두번째 화면" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3EU-xm-PpS">
@@ -415,14 +533,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X12-TC-P7U" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1055" y="-375"/>
+            <point key="canvasLocation" x="1222" y="-468"/>
         </scene>
         <!--Modal View-->
         <scene sceneID="vUB-rK-ubs">
             <objects>
                 <viewController id="ZJR-cr-nF3" customClass="ModalView" customModule="newProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="V1g-HE-1Zw">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Modal" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RC4-kY-sGa">
@@ -450,7 +568,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TbO-PU-mGS" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="hMy-r4-wxx" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1837.5999999999999" y="-375.36945812807886"/>
+            <point key="canvasLocation" x="1103" y="-347"/>
         </scene>
     </scenes>
 </document>
