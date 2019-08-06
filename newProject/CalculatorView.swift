@@ -206,7 +206,10 @@ class CalculatorView : UIViewController {
             
         default:    // = 버튼
             calculate(opt : .Equal)
+            
             formula.append("\(result)")
+            
+            showFormula.text = formula
             
             currentNumber = showResult.text!
             
@@ -217,6 +220,8 @@ class CalculatorView : UIViewController {
             UserDefaults.standard.set(formula, forKey: "formula")
             UserDefaults.standard.set(result, forKey: "result")
             UserDefaults.standard.set(formulaArray, forKey : "array")
+            
+            formula = ""
             
         }
         
