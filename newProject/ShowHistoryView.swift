@@ -10,7 +10,6 @@ import Foundation
 import UIKit
 
 
-
 class ShowHistoryView : UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet var showHistoryTableView: UITableView!
@@ -40,5 +39,4 @@ class ShowHistoryView : UIViewController, UITableViewDelegate, UITableViewDataSo
         cell.textLabel?.text = items[indexPath.row]
         return cell
     }
-    
 }

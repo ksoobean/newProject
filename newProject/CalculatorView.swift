@@ -135,14 +135,13 @@ class CalculatorView : UIViewController {
         }
     }
     
-    
     @IBAction func isClickNumber(button : UIRoundButton) {
         
         // button.title을 사용해 입력한 숫자를 보여주는 방식을 button.tag를 사용하여 변경
         
         // showResult에 입력된 문자열의 마지막이 "."이면 "." 버튼을 disabled 상태로 바꿔 소수점을 여러번 입력하는 것을 방지했던 것에서
         // 문자열의 contains 프로퍼티를 사용해 소수점이 포함되어 있지 않을 경우에만 소수점 추가
-    
+        
         if button.tag == 10 {
             if currentNumber.contains(".") == false {
                 currentNumber += "."
@@ -201,7 +200,6 @@ class CalculatorView : UIViewController {
         case 16 :   // * 버튼
             calculate(opt : .Multiply)
             
-            
         case 17 :   // / 버튼
             calculate(opt : .Divide)
             
@@ -219,9 +217,6 @@ class CalculatorView : UIViewController {
             UserDefaults.standard.set(formula, forKey: "formula")
             UserDefaults.standard.set(result, forKey: "result")
             UserDefaults.standard.set(formulaArray, forKey : "array")
-            
-            showFormula.text! = formula
-            formula = ""
             
         }
         
@@ -252,6 +247,8 @@ class CalculatorView : UIViewController {
                 }
                 
                 newValue = currentNumber
+                currentNumber = "0"
+                
                 // 연산기호에 따라 해당하는 연산을 하고 result에 저장
                 if calculator == .Add {
                     result = Double(preValue)! + Double(newValue)!
