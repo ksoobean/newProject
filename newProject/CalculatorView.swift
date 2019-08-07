@@ -38,6 +38,7 @@
  2. 단방향 / 양방향에 따라 적합한 방식으로 코드 구현
  - 단방향 : performSegue(withIdentifier: , sender:) & override func prepare(for segue: UIStoryboardSegue, sender: Any?){} 로 전달
  - 양방향 : delegate를 사용해 전달
+    페이지 이동 방향과 반대 방향으로 데이터를 전달할 때 이전 페이지는 현재 페이지의 데이터를 알 수 없으므로 protocol과 delegate를 이용해 구현해주어야 함.
  
  */
 
@@ -57,9 +58,22 @@ enum Operator : String {
     case Nil = "Nil"
 }
 
-
-
-class CalculatorView : UIViewController {
+class CalculatorViewController : UIViewController, sendClickedDataProtocol {
+    
+    // ShowHistoryView에서 가져온 cell의 데이터를 처리하는 함수
+    func sendDataToCalculatorView(data: String) {
+        
+        var tmp = data.split(separator: "=")
+        
+        showFormula.text = data
+        showResult.text = "\(tmp[1])"
+        
+        result = Double(tmp[1])!
+        currentNumber = showResult.text!
+    }
+    
+    
+    
     
     // 상속 클래스를 명확히 해줄 것.
     // 코드 상으로 버튼 속성에 접근, 변경이 필요없으면 선언할 필요 없음!
@@ -75,7 +89,7 @@ class CalculatorView : UIViewController {
     // 연산을 수행할 사칙연산 기호
     var calculator : Operator = Operator.Nil
     // 계산 결과
-    var result : Double = 0.0
+    var result : Double = 0
     
     // 결과 보여주는 창
     @IBOutlet var showResult: UILabel!
@@ -91,6 +105,7 @@ class CalculatorView : UIViewController {
     
     // 식 목록을 표시하기 위한 Navigation Right Bar Button
     @IBOutlet var historyButton: UIBarButtonItem!
+    
     
     
     override func viewDidLoad() {
@@ -110,28 +125,32 @@ class CalculatorView : UIViewController {
         historyButton.addTarget(self, action: #selector(rightAction), for: .touchUpInside)
         
         self.navigationItem.rightBarButtonItem = self.historyButton
-        
-        print(formulaArray)
-        
        
+        print("currentValue : \(currentNumber)")
     }
     
     // navigation bar Right button - historyButton을 눌렀을 때 실행할 메서드.
+    // history 버튼을 눌렀을 때 ShowHistoryView로 데이터를 전달
     @objc func rightAction(){
-        self.navigationController?.pushViewController(ShowHistoryView.init(), animated: true)
         
-        // 단방향 데이터 전달. CalculatorView -> ShowHistoryView
+        self.navigationController?.pushViewController(ShowHistoryViewController.init(), animated: true)
+        
+        // CalculatorView -> ShowHistoryView 계산 식이 담긴 array 전달.
         performSegue(withIdentifier: "sendArray", sender: self)
+        
         
     }
     
-    // 단방향 데이터 전달 시 필요한 함수
+    // CalculatorView -> ShowHistoryView 계산 식이 담긴 array 전달
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "sendArray" {
-            
-            let destinationViewController = segue.destination as! ShowHistoryView
+
+            let destinationViewController = segue.destination as! ShowHistoryViewController
             destinationViewController.items = formulaArray
             
+            //
+            destinationViewController.delegate = self
+
         }
     }
     

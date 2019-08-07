@@ -8,7 +8,8 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class HelloSwiftViewController: UIViewController {
+    
     
     // 아울렛 변수 : @IBOutlet으로 정의된 프로퍼티
     @IBOutlet var uiLabel: UILabel!
