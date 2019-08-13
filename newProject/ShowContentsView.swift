@@ -14,40 +14,61 @@ import UIKit
 //
 
 
-// tableview의 cell Label, imageView의 내용이 될 배열과
-// cell 클릭 시 이동할 viewcontroller의 id 배열
-let items = ["첫번째", "두번째"]
-let images = ["image1.jpg", "image2.jpg"]
-let viewControllerID = ["helloSwiftView", "calculatorView"]
 
-class ShowContentsViewController : UIViewController, UITableViewDelegate, UITableViewDataSource{
+
+class ShowContentsViewController : UIViewController {
     
     @IBOutlet var contentTableView: UITableView!
+    
+    // tableview의 cell Label, imageView의 내용이 될 배열과
+    // cell 클릭 시 이동할 viewcontroller의 id 배열
+    
+    let content : [[String]] = [["첫번째", "image1.jpg", "helloSwiftView"], ["두번째", "image2.jpg", "calculatorView"], ["세번째", "image3.jpg", "calculatorWithStackView"], ["네번째", "image4.jpg", "webKitView"]]
+    
     
     override func viewDidLoad() {
         contentTableView.delegate = self
         contentTableView.dataSource = self
     }
+}
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return items.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ContentCustomCell", for: indexPath) as! ContentCustomCell
-        
-        cell.cellLabel.text = items[indexPath.row]
-        cell.cellImageView.image = UIImage(named: images[indexPath.row])
-        
-        return cell
-    }
+//MARK:- UITabelviewDelegate
+extension ShowContentsViewController : UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
         
-        let nextViewController = storyBoard.instantiateViewController(withIdentifier: viewControllerID[indexPath.row])
+        let nextViewController = storyBoard.instantiateViewController(withIdentifier: content[indexPath.row][2])
+
+        
         self.navigationController?.pushViewController(nextViewController, animated: true)
         
     }
+    
 }
+
+//MARK:- UITableViewDataSource
+extension ShowContentsViewController : UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ContentCustomCell", for: indexPath) as! CustomCell
+        
+        // dequeueReusableCell의 개념 추가로 공부해보기
+        
+        cell.cellLabel.text = content[indexPath.row][0]
+        cell.cellImage.image = UIImage(named: content[indexPath.row][1])
+        
+        return cell
+    }
+    
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return content.count
+    }
+    
+    
+}
+    
+
+

@@ -23,7 +23,7 @@ protocol sendClickedDataProtocol {
 }
 
 // UITableViewDelegate, UITableViewDataSource 프로토콜을 채택.
-class ShowHistoryViewController : UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ShowHistoryViewController : UIViewController {
     
     // 프로토콜타입의 변수 생성
     var delegate : sendClickedDataProtocol? = nil
@@ -44,9 +44,14 @@ class ShowHistoryViewController : UIViewController, UITableViewDelegate, UITable
         // cell에 identifier를 지정 - 방법 1
         // 또는 스토리보드에서 프로토타입 셀을 연결하고 identifier를 직접 지정 - 방법 2
         self.showHistoryTableView.register(UITableViewCell.self, forCellReuseIdentifier: "TableViewCell")
-        self.view.addSubview(self.showHistoryTableView)
+        //self.view.addSubview(self.showHistoryTableView)
         
     }
+ 
+}
+
+//MARK:- UITabelviewDelegate, UITableViewDataSource
+extension ShowHistoryViewController : UITableViewDelegate, UITableViewDataSource{
     
     // 프로토콜 채택 시 반드시 같이 선언해주어야 하는 함수
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

@@ -1,67 +1,19 @@
 //
-//  CalculatorView.swift
+//  CalculatorViewControllerWithStack.swift
 //  newProject
 //
-//  Created by 김수빈 on 23/07/2019.
+//  Created by 김수빈 on 12/08/2019.
 //  Copyright © 2019 김수빈. All rights reserved.
 //
 
-/// number0 ~ number9, dot : tag 0 ~ 10
-/// AC, +/-, % : tag 11, 12, 13
-/// +, -, x, /, = : tag 14, 15, 16, 17, 18
-
-// 주석쓰기 최대한 자세하게..(단축키 : command + option  + /)
-// 입력했던 값 결과창 위에다 표시 추가.
-// 모달. 1번에서 두번째 화면에 back 버튼 지우고 모달뷰 추가.
-
-/*
- UserDefaults
- 
-    UserDefaults : 사용자의 기본 설정과 같으 단일 데이터 값의 저장에 적합!
-    [데이터, 키]의 형식으로 저장
-    키의 형식은 String(문자열)
-    데이터로 저장할 수 있는 형식은 아무거나 가능!
-  UserDefaults 지정 방법
-    - UserDefaults.standard.set(formula, forKey: "formula")
-    - UserDefaults.standard.set(result, forKey: "result")
-    - UserDefaults.standard.set(formulaArray, forKey : "array")
- 
-  UserDefaults 가져오기
-    - UserDefaults.standard.string(forKey: "formula")
- 
- */
-
-/*
- ViewController 간의 데이터 전달
- 1. storyboard에서 버튼 액션의 identifier 정의
- 
- 2. 단방향 / 양방향에 따라 적합한 방식으로 코드 구현
- - 단방향 : performSegue(withIdentifier: , sender:) & override func prepare(for segue: UIStoryboardSegue, sender: Any?){} 로 전달
- - 양방향 : delegate를 사용해 전달
-    페이지 이동 방향과 반대 방향으로 데이터를 전달할 때 이전 페이지는 현재 페이지의 데이터를 알 수 없으므로 protocol과 delegate를 이용해 구현해주어야 함.
- 
- */
-
-
 import Foundation
-
 import UIKit
 
-enum Operator : String {
-    case Equal = "="
-    case Add = "+"
-    case Substract = "-"
-    case Multiply = "*"
-    case Divide = "/"
-    case Reverse = "+/-"
-    case Percentage = "%"
-    case Nil = "Nil"
-}
 
-class CalculatorViewController : UIViewController, sendClickedDataProtocol {
+class CalculatorViewControllerWithStack : UIViewController, sendDataProtocol {
     
     // ShowHistoryView에서 가져온 cell의 데이터를 처리하는 함수
-    func sendDataToCalculatorView(data: String) {
+    func sendDataToNewCalculatorView(data: String) {
         
         var tmp = data.split(separator: "=")
         
@@ -71,14 +23,6 @@ class CalculatorViewController : UIViewController, sendClickedDataProtocol {
         result = Double(tmp[1])!
         currentNumber = showResult.text!
     }
-    
-    
-    
-    
-    // 상속 클래스를 명확히 해줄 것.
-    // 코드 상으로 버튼 속성에 접근, 변경이 필요없으면 선언할 필요 없음!
-    //@IBOutlet var number0: UIRoundButton!
-    @IBOutlet var buttonDot: UIRoundButton!
     
     // 입력중인 값
     var currentNumber = ""
@@ -103,10 +47,8 @@ class CalculatorViewController : UIViewController, sendClickedDataProtocol {
     // Navigation bar의 오른쪽 History 버튼을 눌렀을 때 보여질 식 목록을 담는 배열
     var formulaArray : [String] = []
     
-    // 식 목록을 표시하기 위한 Navigation Right Bar Button
+    // navigation button 선언
     @IBOutlet var historyButton: UIBarButtonItem!
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -125,8 +67,10 @@ class CalculatorViewController : UIViewController, sendClickedDataProtocol {
         historyButton.addTarget(self, action: #selector(rightAction), for: .touchUpInside)
         
         self.navigationItem.rightBarButtonItem = self.historyButton
-       
+        
         print("currentValue : \(currentNumber)")
+        
+        
     }
     
     // navigation bar Right button - historyButton을 눌렀을 때 실행할 메서드.
@@ -137,20 +81,18 @@ class CalculatorViewController : UIViewController, sendClickedDataProtocol {
         
         // CalculatorView -> ShowHistoryView 계산 식이 담긴 array 전달.
         performSegue(withIdentifier: "sendArray", sender: self)
-        
-        
     }
     
     // CalculatorView -> ShowHistoryView 계산 식이 담긴 array 전달
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "sendArray" {
-
-            let destinationViewController = segue.destination as! ShowHistoryViewController
+        if segue.identifier == "sendFormula" {
+            
+            let destinationViewController = segue.destination as! NewFormulaTable
             destinationViewController.items = formulaArray
             
             // 프로토콜 채택 및 대리자 위임
-            destinationViewController.delegate = self
-
+            destinationViewController.delegate = self as? sendDataProtocol
+            
         }
     }
     
@@ -178,18 +120,18 @@ class CalculatorViewController : UIViewController, sendClickedDataProtocol {
         }
         
         showResult.text! = currentNumber
-
+        
     }
     
     @IBAction func isOptClick(button : UIRoundButton) {
         let clickedOpt = button.tag
         /// AC, +/-, % : tag 11, 12, 13
         /// +, -, x, /, = : tag 14, 15, 16, 17, 18
-
         
-//        연산자를 누를 때 showResult Label의 text를 saveValue에 저장
-//        누른 연산자를 calculator에 저장
-//        다음 새로운 값을 입력받기 위해 showResult Label과 newValue를 비워줌
+        
+        //        연산자를 누를 때 showResult Label의 text를 saveValue에 저장
+        //        누른 연산자를 calculator에 저장
+        //        다음 새로운 값을 입력받기 위해 showResult Label과 newValue를 비워줌
         switch clickedOpt {
             
         case 11 :   // AC
@@ -245,7 +187,7 @@ class CalculatorViewController : UIViewController, sendClickedDataProtocol {
         }
         
     }
-
+    
     /// 입력된 연산기호에 맞는 사칙연산을 수행하거나 결과를 보여주는 함수
     ///
     /// - Parameter opt: 버튼으로 입력한 연산기호
@@ -288,11 +230,9 @@ class CalculatorViewController : UIViewController, sendClickedDataProtocol {
                 // 연속계산을 위해 계산할 값 1에 계산 결과를 저장하고 보여줌
                 preValue = String(result)
                 showResult.text = preValue
-            
+                
             }
             calculator = opt
         }
     }
-
-    
 }
