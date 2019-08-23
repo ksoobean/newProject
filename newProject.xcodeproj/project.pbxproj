@@ -20,9 +20,13 @@
 		179891E92301233E0065E1E6 /* MyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 179891E72301233E0065E1E6 /* MyTableViewCell.xib */; };
 		179891ED230124730065E1E6 /* NewFormulaTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179891EC230124730065E1E6 /* NewFormulaTable.swift */; };
 		179891EF23024DCA0065E1E6 /* WebKitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179891EE23024DCA0065E1E6 /* WebKitView.swift */; };
-		179891F423024ECA0065E1E6 /* image4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 179891F223024ECA0065E1E6 /* image4.jpg */; };
-		179891F523024ECA0065E1E6 /* image3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 179891F323024ECA0065E1E6 /* image3.jpg */; };
 		179891F8230250030065E1E6 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 179891F7230250030065E1E6 /* WebKit.framework */; };
+		17CA4FE4230CE4E7000F503C /* image4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 17CA4FE2230CE4E7000F503C /* image4.jpg */; };
+		17CA4FE5230CE4E7000F503C /* image3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 17CA4FE3230CE4E7000F503C /* image3.jpg */; };
+		17CA4FE7230FC33C000F503C /* image5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 17CA4FE6230FC33C000F503C /* image5.jpg */; };
+		17CA4FE9230FC409000F503C /* CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CA4FE8230FC409000F503C /* CollectionView.swift */; };
+		17CA4FEC230FC4C1000F503C /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CA4FEA230FC4C1000F503C /* CollectionViewCell.swift */; };
+		17CA4FED230FC4C1000F503C /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17CA4FEB230FC4C1000F503C /* CollectionViewCell.xib */; };
 		17D5D25B22DC216000306351 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D5D25A22DC216000306351 /* AppDelegate.swift */; };
 		17D5D25D22DC216000306351 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D5D25C22DC216000306351 /* ViewController.swift */; };
 		17D5D26022DC216000306351 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17D5D25E22DC216000306351 /* Main.storyboard */; };
@@ -63,9 +67,13 @@
 		179891E72301233E0065E1E6 /* MyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyTableViewCell.xib; sourceTree = "<group>"; };
 		179891EC230124730065E1E6 /* NewFormulaTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewFormulaTable.swift; sourceTree = "<group>"; };
 		179891EE23024DCA0065E1E6 /* WebKitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebKitView.swift; sourceTree = "<group>"; };
-		179891F223024ECA0065E1E6 /* image4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = image4.jpg; path = ../../../../.Trash/image4.jpg; sourceTree = "<group>"; };
-		179891F323024ECA0065E1E6 /* image3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = image3.jpg; path = ../../../../.Trash/image3.jpg; sourceTree = "<group>"; };
 		179891F7230250030065E1E6 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		17CA4FE2230CE4E7000F503C /* image4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = image4.jpg; path = ../../../image4.jpg; sourceTree = "<group>"; };
+		17CA4FE3230CE4E7000F503C /* image3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = image3.jpg; path = ../../../image3.jpg; sourceTree = "<group>"; };
+		17CA4FE6230FC33C000F503C /* image5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = image5.jpg; path = ../../../image5.jpg; sourceTree = "<group>"; };
+		17CA4FE8230FC409000F503C /* CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionView.swift; sourceTree = "<group>"; };
+		17CA4FEA230FC4C1000F503C /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		17CA4FEB230FC4C1000F503C /* CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
 		17D5D25722DC216000306351 /* newProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = newProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17D5D25A22DC216000306351 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		17D5D25C22DC216000306351 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = newProject/ViewController.swift; sourceTree = SOURCE_ROOT; };
@@ -141,8 +149,9 @@
 			children = (
 				179891D922FA9DEF0065E1E6 /* image1.jpg */,
 				179891D822FA9DEF0065E1E6 /* image2.jpg */,
-				179891F323024ECA0065E1E6 /* image3.jpg */,
-				179891F223024ECA0065E1E6 /* image4.jpg */,
+				17CA4FE3230CE4E7000F503C /* image3.jpg */,
+				17CA4FE2230CE4E7000F503C /* image4.jpg */,
+				17CA4FE6230FC33C000F503C /* image5.jpg */,
 				17D5D25A22DC216000306351 /* AppDelegate.swift */,
 				17D5D25C22DC216000306351 /* ViewController.swift */,
 				17D5D25E22DC216000306351 /* Main.storyboard */,
@@ -160,6 +169,9 @@
 				179891E72301233E0065E1E6 /* MyTableViewCell.xib */,
 				179891EC230124730065E1E6 /* NewFormulaTable.swift */,
 				179891EE23024DCA0065E1E6 /* WebKitView.swift */,
+				17CA4FE8230FC409000F503C /* CollectionView.swift */,
+				17CA4FEA230FC4C1000F503C /* CollectionViewCell.swift */,
+				17CA4FEB230FC4C1000F503C /* CollectionViewCell.xib */,
 			);
 			path = newProject;
 			sourceTree = "<group>";
@@ -286,14 +298,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				179891F523024ECA0065E1E6 /* image3.jpg in Resources */,
 				17D5D26522DC216100306351 /* LaunchScreen.storyboard in Resources */,
+				17CA4FE7230FC33C000F503C /* image5.jpg in Resources */,
 				179891DB22FA9DEF0065E1E6 /* image1.jpg in Resources */,
 				17D5D26222DC216100306351 /* Assets.xcassets in Resources */,
-				179891F423024ECA0065E1E6 /* image4.jpg in Resources */,
+				17CA4FED230FC4C1000F503C /* CollectionViewCell.xib in Resources */,
 				179891DA22FA9DEF0065E1E6 /* image2.jpg in Resources */,
+				17CA4FE4230CE4E7000F503C /* image4.jpg in Resources */,
 				179891E92301233E0065E1E6 /* MyTableViewCell.xib in Resources */,
 				17D5D26022DC216000306351 /* Main.storyboard in Resources */,
+				17CA4FE5230CE4E7000F503C /* image3.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -323,10 +337,12 @@
 				17D5D25D22DC216000306351 /* ViewController.swift in Sources */,
 				172A372722E6916B00F3DE03 /* CalculatorView.swift in Sources */,
 				179891E82301233E0065E1E6 /* MyTableViewCell.swift in Sources */,
+				17CA4FE9230FC409000F503C /* CollectionView.swift in Sources */,
 				174C1DD022F14E8200B6BE27 /* modalView.swift in Sources */,
 				17D5D25B22DC216000306351 /* AppDelegate.swift in Sources */,
 				174FFEB722FA893C008C9974 /* ShowContentsView.swift in Sources */,
 				179891EF23024DCA0065E1E6 /* WebKitView.swift in Sources */,
+				17CA4FEC230FC4C1000F503C /* CollectionViewCell.swift in Sources */,
 				174FFEB322F3F5B5008C9974 /* ShowHistoryView.swift in Sources */,
 				179891E122FD4BB50065E1E6 /* CustomCell.swift in Sources */,
 				174FFEAF22F3C969008C9974 /* UIRoundButton.swift in Sources */,

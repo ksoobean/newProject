@@ -14,8 +14,6 @@ import UIKit
 //
 
 
-
-
 class ShowContentsViewController : UIViewController {
     
     @IBOutlet var contentTableView: UITableView!
@@ -23,8 +21,7 @@ class ShowContentsViewController : UIViewController {
     // tableview의 cell Label, imageView의 내용이 될 배열과
     // cell 클릭 시 이동할 viewcontroller의 id 배열
     
-    let content : [[String]] = [["첫번째", "image1.jpg", "helloSwiftView"], ["두번째", "image2.jpg", "calculatorView"], ["세번째", "image3.jpg", "calculatorWithStackView"], ["네번째", "image4.jpg", "webKitView"]]
-    
+    let content : [[String]] = [["첫번째", "image1.jpg", "helloSwiftView"], ["두번째", "image2.jpg", "calculatorView"], ["세번째", "image3.jpg", "calculatorWithStackView"], ["네번째", "image4.jpg", "webKitView"], ["다섯번째", "image5.jpg", "collectionView"]]
     
     override func viewDidLoad() {
         contentTableView.delegate = self
@@ -38,12 +35,9 @@ extension ShowContentsViewController : UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-        
         let nextViewController = storyBoard.instantiateViewController(withIdentifier: content[indexPath.row][2])
-
         
         self.navigationController?.pushViewController(nextViewController, animated: true)
-        
     }
     
 }
@@ -62,12 +56,9 @@ extension ShowContentsViewController : UITableViewDataSource {
         return cell
     }
     
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return content.count
     }
-    
-    
 }
     
 
