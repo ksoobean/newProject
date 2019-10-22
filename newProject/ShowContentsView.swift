@@ -16,12 +16,12 @@ import UIKit
 
 class ShowContentsViewController : UIViewController {
     
-    @IBOutlet var contentTableView: UITableView!
+    @IBOutlet weak var contentTableView: UITableView!
     
     // tableview의 cell Label, imageView의 내용이 될 배열과
     // cell 클릭 시 이동할 viewcontroller의 id 배열
     
-    let content : [[String]] = [["첫번째", "image1.jpg", "helloSwiftView"], ["두번째", "image2.jpg", "calculatorView"], ["세번째", "image3.jpg", "calculatorWithStackView"], ["네번째", "image4.jpg", "webKitView"], ["다섯번째", "image5.jpg", "collectionView"]]
+    let content : [[String]] = [["첫번째", "image1.jpg", "helloSwiftView"], ["두번째", "image2.jpg", "calculatorView"], ["세번째", "image3.jpg", "calculatorWithStackView"], ["네번째", "image4.jpg", "webKitView"], ["다섯번째", "image5.jpg", "collectionView"], ["여섯번째", "image5.jpg", "swiftUIView"]]
     
     override func viewDidLoad() {
         contentTableView.delegate = self

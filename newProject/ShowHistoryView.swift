@@ -74,8 +74,8 @@ extension ShowHistoryViewController : UITableViewDelegate, UITableViewDataSource
         //print("clicked : \(items[indexPath.row])")
         
         self.delegate?.sendDataToCalculatorView(data: dataToSend)
-        
         self.navigationController?.popViewController(animated: true)
+        
     }
     
 }
